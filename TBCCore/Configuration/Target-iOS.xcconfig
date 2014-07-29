@@ -1,0 +1,6 @@
+//  Copyright (c) 2014 Tabcorp Pty. Ltd. All rights reserved.
+
+SDKROOT = iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 5.1
+
+SKIP_INSTALL = YES
