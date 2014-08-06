@@ -16,6 +16,9 @@
 		A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0CF19925129007F2F47 /* TBCTypeSafety.m */; };
 		A377E0D419925131007F2F47 /* TBCTypeSafetyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */; };
 		A377E0D519925131007F2F47 /* TBCTypeSafetyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */; };
+		A377E0D81992529D007F2F47 /* TBCTimeInterval.h in Headers */ = {isa = PBXBuildFile; fileRef = A377E0D61992529D007F2F47 /* TBCTimeInterval.h */; };
+		A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0D71992529D007F2F47 /* TBCTimeInterval.m */; };
+		A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0D71992529D007F2F47 /* TBCTimeInterval.m */; };
 		A3A6BE181987EE280073C4DB /* TBCCoreExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */; };
 		A3A6BE1B198917410073C4DB /* libTBCCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6C1987E2EB00C30AFA /* libTBCCore-iOS.a */; };
 		A3DBD4A01987E68C00EDCAD2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F7D1987E2EB00C30AFA /* XCTest.framework */; };
@@ -87,6 +90,8 @@
 		A377E0CE19925129007F2F47 /* TBCTypeSafety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCTypeSafety.h; sourceTree = "<group>"; };
 		A377E0CF19925129007F2F47 /* TBCTypeSafety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafety.m; sourceTree = "<group>"; };
 		A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafetyTests.m; sourceTree = "<group>"; };
+		A377E0D61992529D007F2F47 /* TBCTimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCTimeInterval.h; sourceTree = "<group>"; };
+		A377E0D71992529D007F2F47 /* TBCTimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTimeInterval.m; sourceTree = "<group>"; };
 		A37B8FE81991F3AE008878BE /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = TBCCore/Configuration/Project.xcconfig; sourceTree = SOURCE_ROOT; };
 		A37B8FE91991F47C008878BE /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Debug.xcconfig"; path = "TBCCore/Configuration/Project-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A37B8FEA1991F47C008878BE /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Release.xcconfig"; path = "TBCCore/Configuration/Project-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -210,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				A3084F741987E2EB00C30AFA /* TBCCore.h */,
+				A377E0D61992529D007F2F47 /* TBCTimeInterval.h */,
+				A377E0D71992529D007F2F47 /* TBCTimeInterval.m */,
 				A377E0CE19925129007F2F47 /* TBCTypeSafety.h */,
 				A377E0CF19925129007F2F47 /* TBCTypeSafety.m */,
 			);
@@ -269,6 +276,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A377E0D81992529D007F2F47 /* TBCTimeInterval.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
+				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
+				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
