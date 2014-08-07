@@ -33,7 +33,6 @@
 		A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */; };
 		A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */; };
 		A3A6BE181987EE280073C4DB /* TBCCoreExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */; };
-		A3A6BE1B198917410073C4DB /* libTBCCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6C1987E2EB00C30AFA /* libTBCCore-iOS.a */; };
 		A3DBD4A01987E68C00EDCAD2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F7D1987E2EB00C30AFA /* XCTest.framework */; };
 		A3DBD4A41987E68C00EDCAD2 /* libTBCCore-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DBD48E1987E68B00EDCAD2 /* libTBCCore-mac.a */; };
 		A3DBD4B51987E9EC00EDCAD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6F1987E2EB00C30AFA /* Foundation.framework */; };
@@ -67,12 +66,12 @@
 			remoteGlobalIDString = A3084F6B1987E2EB00C30AFA;
 			remoteInfo = TBCCore;
 		};
-		A3A6BE191989173B0073C4DB /* PBXContainerItemProxy */ = {
+		A377E1381994F0F2007F2F47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3084F641987E2EB00C30AFA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A3084F6B1987E2EB00C30AFA;
-			remoteInfo = "TBCCore-iOS";
+			containerPortal = A377E0E819931308007F2F47 /* TBCCoreExample-iOS-eggs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 838AFA372D2ADAB9B3E92A39;
+			remoteInfo = "TBCCoreExample-iOS-eggs";
 		};
 		A3DBD4A21987E68C00EDCAD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -124,12 +123,15 @@
 		A377E0DB199253ED007F2F47 /* TBCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCAlertView.h; sourceTree = "<group>"; };
 		A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCAlertView-ios.m"; sourceTree = "<group>"; };
 		A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCAlertView-mac.m"; sourceTree = "<group>"; };
-		A37B8FE81991F3AE008878BE /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = TBCCore/Configuration/Project.xcconfig; sourceTree = SOURCE_ROOT; };
-		A37B8FE91991F47C008878BE /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Debug.xcconfig"; path = "TBCCore/Configuration/Project-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
-		A37B8FEA1991F47C008878BE /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Release.xcconfig"; path = "TBCCore/Configuration/Project-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
-		A37B8FEC1991F53C008878BE /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = TBCCore/Configuration/Warnings.xcconfig; sourceTree = SOURCE_ROOT; };
-		A37B8FF11991FF99008878BE /* Target-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Target-iOS.xcconfig"; path = "TBCCore/Configuration/Target-iOS.xcconfig"; sourceTree = SOURCE_ROOT; };
-		A37B8FF21991FF99008878BE /* Target-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Target-mac.xcconfig"; path = "TBCCore/Configuration/Target-mac.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A377E0E819931308007F2F47 /* TBCCoreExample-iOS-eggs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "TBCCoreExample-iOS-eggs.xcodeproj"; path = ".eggs/TBCCoreExample-iOS/TBCCoreExample-iOS-eggs.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		A377E11F199457A2007F2F47 /* TBCCoreExample-iOS.eggfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TBCCoreExample-iOS.eggfile"; sourceTree = SOURCE_ROOT; };
+		A377E1451995C20B007F2F47 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Debug.xcconfig"; path = "Configuration/Project-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A377E1461995C20B007F2F47 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Project-Release.xcconfig"; path = "Configuration/Project-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A377E1471995C20B007F2F47 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = Configuration/Project.xcconfig; sourceTree = SOURCE_ROOT; };
+		A377E1481995C20B007F2F47 /* Target-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Target-iOS.xcconfig"; path = "Configuration/Target-iOS.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A377E1491995C20B007F2F47 /* Target-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Target-mac.xcconfig"; path = "Configuration/Target-mac.xcconfig"; sourceTree = SOURCE_ROOT; };
+		A377E14A1995C20B007F2F47 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = Configuration/Warnings.xcconfig; sourceTree = SOURCE_ROOT; };
+		A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "TBCCoreExample-ios.xcconfig"; path = "Configuration/TBCCoreExample-ios.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A3A6BE161987EE280073C4DB /* TBCCoreExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCCoreExampleViewController.h; sourceTree = "<group>"; };
 		A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCoreExampleViewController.m; sourceTree = "<group>"; };
 		A3DBD48E1987E68B00EDCAD2 /* libTBCCore-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTBCCore-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +194,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A6BE1B198917410073C4DB /* libTBCCore-iOS.a in Frameworks */,
 				A3DBD4BD1987EA6F00EDCAD2 /* CoreGraphics.framework in Frameworks */,
 				A3DBD4BF1987EA6F00EDCAD2 /* UIKit.framework in Frameworks */,
 				A3DBD4BB1987EA6F00EDCAD2 /* Foundation.framework in Frameworks */,
@@ -275,25 +276,44 @@
 		A3084F851987E2EB00C30AFA /* TBCCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */,
 				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
 				A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				A30AF17F199B88F500E2E356 /* TBCTimerTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
+				A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */,
 			);
 			path = TBCCoreTests;
+			sourceTree = "<group>";
+		};
+		A377E0E7199312F8007F2F47 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A377E11F199457A2007F2F47 /* TBCCoreExample-iOS.eggfile */,
+				A377E0E819931308007F2F47 /* TBCCoreExample-iOS-eggs.xcodeproj */,
+			);
+			name = lib;
+			path = TBCCoreExampleTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		A377E1351994F0ED007F2F47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A377E1391994F0F2007F2F47 /* libTBCCoreExample-iOS-eggs.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A37B8FE71991F392008878BE /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				A37B8FE81991F3AE008878BE /* Project.xcconfig */,
-				A37B8FE91991F47C008878BE /* Project-Debug.xcconfig */,
-				A37B8FEA1991F47C008878BE /* Project-Release.xcconfig */,
-				A37B8FEC1991F53C008878BE /* Warnings.xcconfig */,
-				A37B8FF11991FF99008878BE /* Target-iOS.xcconfig */,
-				A37B8FF21991FF99008878BE /* Target-mac.xcconfig */,
+				A377E1451995C20B007F2F47 /* Project-Debug.xcconfig */,
+				A377E1461995C20B007F2F47 /* Project-Release.xcconfig */,
+				A377E1471995C20B007F2F47 /* Project.xcconfig */,
+				A377E1481995C20B007F2F47 /* Target-iOS.xcconfig */,
+				A377E1491995C20B007F2F47 /* Target-mac.xcconfig */,
+				A377E14A1995C20B007F2F47 /* Warnings.xcconfig */,
+				A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */,
 			);
 			name = Configuration;
 			path = TBCCoreExampleTests;
@@ -309,6 +329,7 @@
 				A3DBD4CC1987EA6F00EDCAD2 /* Images.xcassets */,
 				A3DBD4C21987EA6F00EDCAD2 /* TBCCoreExample-Info.plist */,
 				A3DBD4C61987EA6F00EDCAD2 /* main.m */,
+				A377E0E7199312F8007F2F47 /* lib */,
 			);
 			path = TBCCoreExample;
 			sourceTree = "<group>";
@@ -423,7 +444,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A3A6BE1A1989173B0073C4DB /* PBXTargetDependency */,
 			);
 			name = "TBCCoreExample-iOS";
 			productName = "TBCCore Example";
@@ -479,6 +499,12 @@
 			mainGroup = A3084F631987E2EB00C30AFA;
 			productRefGroup = A3084F6D1987E2EB00C30AFA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A377E1351994F0ED007F2F47 /* Products */;
+					ProjectRef = A377E0E819931308007F2F47 /* TBCCoreExample-iOS-eggs.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A3084F6B1987E2EB00C30AFA /* TBCCore-iOS */,
@@ -490,6 +516,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A377E1391994F0F2007F2F47 /* libTBCCoreExample-iOS-eggs.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libTBCCoreExample-iOS-eggs.a";
+			remoteRef = A377E1381994F0F2007F2F47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A3084F7A1987E2EB00C30AFA /* Resources */ = {
@@ -602,11 +638,6 @@
 			target = A3084F6B1987E2EB00C30AFA /* TBCCore-iOS */;
 			targetProxy = A3084F821987E2EB00C30AFA /* PBXContainerItemProxy */;
 		};
-		A3A6BE1A1989173B0073C4DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A3084F6B1987E2EB00C30AFA /* TBCCore-iOS */;
-			targetProxy = A3A6BE191989173B0073C4DB /* PBXContainerItemProxy */;
-		};
 		A3DBD4A31987E68C00EDCAD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A3DBD48D1987E68B00EDCAD2 /* TBCCore-mac */;
@@ -622,7 +653,7 @@
 /* Begin XCBuildConfiguration section */
 		A3084F8D1987E2EB00C30AFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FE91991F47C008878BE /* Project-Debug.xcconfig */;
+			baseConfigurationReference = A377E1451995C20B007F2F47 /* Project-Debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,7 +664,7 @@
 		};
 		A3084F8E1987E2EB00C30AFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FEA1991F47C008878BE /* Project-Release.xcconfig */;
+			baseConfigurationReference = A377E1461995C20B007F2F47 /* Project-Release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -644,14 +675,14 @@
 		};
 		A3084F901987E2EB00C30AFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FF11991FF99008878BE /* Target-iOS.xcconfig */;
+			baseConfigurationReference = A377E1481995C20B007F2F47 /* Target-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		A3084F911987E2EB00C30AFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FF11991FF99008878BE /* Target-iOS.xcconfig */;
+			baseConfigurationReference = A377E1481995C20B007F2F47 /* Target-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -696,14 +727,14 @@
 		};
 		A3DBD4AE1987E68C00EDCAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FF21991FF99008878BE /* Target-mac.xcconfig */;
+			baseConfigurationReference = A377E1491995C20B007F2F47 /* Target-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		A3DBD4AF1987E68C00EDCAD2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37B8FF21991FF99008878BE /* Target-mac.xcconfig */;
+			baseConfigurationReference = A377E1491995C20B007F2F47 /* Target-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -751,41 +782,15 @@
 		};
 		A3DBD4E11987EA6F00EDCAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					.,
-				);
-				INFOPLIST_FILE = "TBCCoreExample/TBCCoreExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		A3DBD4E21987EA6F00EDCAD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					.,
-				);
-				INFOPLIST_FILE = "TBCCoreExample/TBCCoreExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};

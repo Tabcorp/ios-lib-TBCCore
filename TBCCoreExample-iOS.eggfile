@@ -1,0 +1,3 @@
+platform :ios
+
+egg 'TBCCore-iOS', :path=>'.'
