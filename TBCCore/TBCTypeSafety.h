@@ -15,6 +15,7 @@ id _TBCEnsureClass(const Class klass, id<NSObject> const object);
 
 #define DECLARE_TBCEnsure(type) static inline type *TBCEnsure##type(id<NSObject> const object) {return TBCEnsureClass(type,object);};
 DECLARE_TBCEnsure(NSArray);
+DECLARE_TBCEnsure(NSDecimalNumber);
 DECLARE_TBCEnsure(NSDictionary);
 DECLARE_TBCEnsure(NSNumber);
 DECLARE_TBCEnsure(NSString);
