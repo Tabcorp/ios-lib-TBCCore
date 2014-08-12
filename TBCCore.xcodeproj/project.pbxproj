@@ -47,6 +47,11 @@
 		FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BA1999BAB40079A886 /* TBCObjC.m */; };
 		FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BE1999CEB80079A886 /* TBCObjCTests.m */; };
 		FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BE1999CEB80079A886 /* TBCObjCTests.m */; };
+		FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */; };
+		FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */; };
+		FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */; };
+		FD4936DF199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */; };
+		FD4936E0199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +140,9 @@
 		FD4936B91999BAB40079A886 /* TBCObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCObjC.h; sourceTree = "<group>"; };
 		FD4936BA1999BAB40079A886 /* TBCObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCObjC.m; sourceTree = "<group>"; };
 		FD4936BE1999CEB80079A886 /* TBCObjCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCObjCTests.m; sourceTree = "<group>"; };
+		FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDelayedDispatcher.h; sourceTree = "<group>"; };
+		FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDelayedDispatcher.m; sourceTree = "<group>"; };
+		FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDelayedDispatcherTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +248,8 @@
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
 				A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */,
 				A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */,
+				FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */,
+				FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */,
 				A30AF177199B53F000E2E356 /* TBCDispatch.h */,
 				A30AF178199B53F000E2E356 /* TBCDispatch.m */,
 				FD4936B91999BAB40079A886 /* TBCObjC.h */,
@@ -256,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */,
+				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
 				A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
@@ -311,6 +322,7 @@
 				A377E0DC199253ED007F2F47 /* TBCAlertView.h in Headers */,
 				A30AF179199B53F000E2E356 /* TBCDispatch.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
+				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +518,7 @@
 			files = (
 				A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */,
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
+				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17A199B53F000E2E356 /* TBCDispatch.m in Sources */,
@@ -516,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4936DF199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */,
 				A377E0D419925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
 				FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17D199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
@@ -528,6 +542,7 @@
 			files = (
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
+				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
 				FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17B199B53F000E2E356 /* TBCDispatch.m in Sources */,
@@ -538,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4936E0199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */,
 				A377E0D519925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
 				FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17E199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
