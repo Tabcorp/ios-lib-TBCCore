@@ -37,6 +37,11 @@
 		A3DBD4D41987EA6F00EDCAD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6F1987E2EB00C30AFA /* Foundation.framework */; };
 		A3DBD4D51987EA6F00EDCAD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DBD4BE1987EA6F00EDCAD2 /* UIKit.framework */; };
 		A3DBD4DF1987EA6F00EDCAD2 /* TBCCoreExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DBD4DE1987EA6F00EDCAD2 /* TBCCoreExampleTests.m */; };
+		FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4936B91999BAB40079A886 /* TBCObjC.h */; };
+		FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BA1999BAB40079A886 /* TBCObjC.m */; };
+		FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BA1999BAB40079A886 /* TBCObjC.m */; };
+		FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BE1999CEB80079A886 /* TBCObjCTests.m */; };
+		FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936BE1999CEB80079A886 /* TBCObjCTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,9 @@
 		A3DBD4D21987EA6F00EDCAD2 /* TBCCoreExampleTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TBCCoreExampleTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBD4DA1987EA6F00EDCAD2 /* TBCCoreExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TBCCoreExampleTests-Info.plist"; sourceTree = "<group>"; };
 		A3DBD4DE1987EA6F00EDCAD2 /* TBCCoreExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCCoreExampleTests.m; sourceTree = "<group>"; };
+		FD4936B91999BAB40079A886 /* TBCObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCObjC.h; sourceTree = "<group>"; };
+		FD4936BA1999BAB40079A886 /* TBCObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCObjC.m; sourceTree = "<group>"; };
+		FD4936BE1999CEB80079A886 /* TBCObjCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCObjCTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +232,8 @@
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
 				A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */,
 				A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */,
+				FD4936B91999BAB40079A886 /* TBCObjC.h */,
+				FD4936BA1999BAB40079A886 /* TBCObjC.m */,
 				A377E0D61992529D007F2F47 /* TBCTimeInterval.h */,
 				A377E0D71992529D007F2F47 /* TBCTimeInterval.m */,
 				A377E0CE19925129007F2F47 /* TBCTypeSafety.h */,
@@ -236,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */,
+				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
 			);
 			path = TBCCoreTests;
@@ -287,6 +298,7 @@
 			files = (
 				A377E0D81992529D007F2F47 /* TBCTimeInterval.h in Headers */,
 				A377E0DC199253ED007F2F47 /* TBCAlertView.h in Headers */,
+				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +495,7 @@
 				A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */,
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
+				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A377E0D419925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
+				FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +515,7 @@
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
+				FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A377E0D519925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
+				FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
