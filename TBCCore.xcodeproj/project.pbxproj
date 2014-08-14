@@ -11,11 +11,16 @@
 		A3084F7E1987E2EB00C30AFA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F7D1987E2EB00C30AFA /* XCTest.framework */; };
 		A3084F7F1987E2EB00C30AFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6F1987E2EB00C30AFA /* Foundation.framework */; };
 		A3084F841987E2EB00C30AFA /* libTBCCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6C1987E2EB00C30AFA /* libTBCCore-iOS.a */; };
+		A30AF174199B195400E2E356 /* TBCTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = A30AF172199B195400E2E356 /* TBCTimer.h */; };
+		A30AF175199B195400E2E356 /* TBCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF173199B195400E2E356 /* TBCTimer.m */; };
+		A30AF176199B195400E2E356 /* TBCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF173199B195400E2E356 /* TBCTimer.m */; };
 		A30AF179199B53F000E2E356 /* TBCDispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = A30AF177199B53F000E2E356 /* TBCDispatch.h */; };
 		A30AF17A199B53F000E2E356 /* TBCDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF178199B53F000E2E356 /* TBCDispatch.m */; };
 		A30AF17B199B53F000E2E356 /* TBCDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF178199B53F000E2E356 /* TBCDispatch.m */; };
 		A30AF17D199B58ED00E2E356 /* TBCDispatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */; };
 		A30AF17E199B58ED00E2E356 /* TBCDispatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */; };
+		A30AF180199B88F500E2E356 /* TBCTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17F199B88F500E2E356 /* TBCTimerTests.m */; };
+		A30AF181199B88F500E2E356 /* TBCTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17F199B88F500E2E356 /* TBCTimerTests.m */; };
 		A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */ = {isa = PBXBuildFile; fileRef = A377E0CE19925129007F2F47 /* TBCTypeSafety.h */; };
 		A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0CF19925129007F2F47 /* TBCTypeSafety.m */; };
 		A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0CF19925129007F2F47 /* TBCTypeSafety.m */; };
@@ -105,9 +110,12 @@
 		A3084F7C1987E2EB00C30AFA /* TBCCoreTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TBCCoreTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3084F7D1987E2EB00C30AFA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TBCCoreTests-Info.plist"; sourceTree = "<group>"; };
+		A30AF172199B195400E2E356 /* TBCTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCTimer.h; sourceTree = "<group>"; };
+		A30AF173199B195400E2E356 /* TBCTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTimer.m; sourceTree = "<group>"; };
 		A30AF177199B53F000E2E356 /* TBCDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDispatch.h; sourceTree = "<group>"; };
 		A30AF178199B53F000E2E356 /* TBCDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDispatch.m; sourceTree = "<group>"; };
 		A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDispatchTests.m; sourceTree = "<group>"; };
+		A30AF17F199B88F500E2E356 /* TBCTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTimerTests.m; sourceTree = "<group>"; };
 		A377E0CE19925129007F2F47 /* TBCTypeSafety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCTypeSafety.h; sourceTree = "<group>"; };
 		A377E0CF19925129007F2F47 /* TBCTypeSafety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafety.m; sourceTree = "<group>"; };
 		A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafetyTests.m; sourceTree = "<group>"; };
@@ -256,6 +264,8 @@
 				FD4936BA1999BAB40079A886 /* TBCObjC.m */,
 				A377E0D61992529D007F2F47 /* TBCTimeInterval.h */,
 				A377E0D71992529D007F2F47 /* TBCTimeInterval.m */,
+				A30AF172199B195400E2E356 /* TBCTimer.h */,
+				A30AF173199B195400E2E356 /* TBCTimer.m */,
 				A377E0CE19925129007F2F47 /* TBCTypeSafety.h */,
 				A377E0CF19925129007F2F47 /* TBCTypeSafety.m */,
 			);
@@ -269,6 +279,7 @@
 				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
 				A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
+				A30AF17F199B88F500E2E356 /* TBCTimerTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
 			);
 			path = TBCCoreTests;
@@ -321,6 +332,7 @@
 				A377E0D81992529D007F2F47 /* TBCTimeInterval.h in Headers */,
 				A377E0DC199253ED007F2F47 /* TBCAlertView.h in Headers */,
 				A30AF179199B53F000E2E356 /* TBCDispatch.h in Headers */,
+				A30AF174199B195400E2E356 /* TBCTimer.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
@@ -519,6 +531,7 @@
 				A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */,
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
+				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17A199B53F000E2E356 /* TBCDispatch.m in Sources */,
@@ -533,6 +546,7 @@
 				A377E0D419925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
 				FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17D199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
+				A30AF180199B88F500E2E356 /* TBCTimerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +557,7 @@
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
+				A30AF176199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
 				FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17B199B53F000E2E356 /* TBCDispatch.m in Sources */,
@@ -557,6 +572,7 @@
 				A377E0D519925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
 				FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17E199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
+				A30AF181199B88F500E2E356 /* TBCTimerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

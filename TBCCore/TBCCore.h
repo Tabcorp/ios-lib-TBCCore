@@ -5,4 +5,5 @@
 #import <TBCCore/TBCDispatch.h>
 #import <TBCCore/TBCObjC.h>
 #import <TBCCore/TBCTimeInterval.h>
+#import <TBCCore/TBCTimer.h>
 #import <TBCCore/TBCTypeSafety.h>
