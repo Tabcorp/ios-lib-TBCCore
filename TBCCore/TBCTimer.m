@@ -29,9 +29,9 @@ NSTimeInterval const TBCTimerIntervalForever = INFINITY;
         dispatch_source_set_timer(_source, sourceStart, sourceInterval, sourceLeeway);
         BOOL repeating = sourceInterval != DISPATCH_TIME_FOREVER;
         
-        __weak __typeof(self) wself = self;
+        __weak __typeof__(self) wself = self;
         dispatch_source_set_event_handler(_source, ^{
-            __strong __typeof(self) sself = wself;
+            __strong __typeof__(self) sself = wself;
             if (!sself) {
                 return;
             }

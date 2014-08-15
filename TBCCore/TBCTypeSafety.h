@@ -47,7 +47,7 @@ NSArray *TBCEnsureNSArrayNotEmpty(id<NSObject> const object);
  @return `object` if it is not NSNull, otherwise `nil`
  */
 id _TBCEnsureNotNSNull(id<NSObject> const object);
-#define TBCEnsureNotNSNull(...) ((__typeof(__VA_ARGS__))_TBCEnsureNotNSNull((id)(__VA_ARGS__)))
+#define TBCEnsureNotNSNull(...) ((__typeof__(__VA_ARGS__))_TBCEnsureNotNSNull((id)(__VA_ARGS__)))
 
 /**
  Ensure an object conforms to a given protocol
