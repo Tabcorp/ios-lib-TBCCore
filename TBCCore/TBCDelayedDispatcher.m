@@ -25,7 +25,10 @@ NSTimeInterval const TBCDelayedDispatcherDelayForever = INFINITY;
     return [self initWithDelay:delay maximumDelay:maximumDelay queue:nil block:block];
 }
 - (instancetype)initWithDelay:(NSTimeInterval)delay maximumDelay:(NSTimeInterval)maximumDelay queue:(dispatch_queue_t)queue block:(dispatch_block_t)block {
+    NSParameterAssert(delay > 0);
+    NSParameterAssert(maximumDelay > 0);
     NSParameterAssert(block);
+    
     if (!queue) {
         queue = dispatch_get_main_queue();
     }
@@ -34,18 +37,10 @@ NSTimeInterval const TBCDelayedDispatcherDelayForever = INFINITY;
         tbc_dispatch_retain(_queue = queue);
         _block = [block ?: ^{} copy];
 
-        if (!isfinite(delay) || delay < 0 || delay >= (DBL_MAX / NSEC_PER_SEC)) {
-            _timerDelay = DISPATCH_TIME_FOREVER;
-        } else {
-            _timerDelay = delay * NSEC_PER_SEC;
-        }
+        _timerDelay = tbc_dispatch_time_interval(delay) ?: DISPATCH_TIME_FOREVER;
         _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
 
-        if (!isfinite(maximumDelay) || maximumDelay < 0 || maximumDelay >= (DBL_MAX / NSEC_PER_SEC)) {
-            _maximumTimerDelay = DISPATCH_TIME_FOREVER;
-        } else {
-            _maximumTimerDelay = maximumDelay * NSEC_PER_SEC;
-        }
+        _maximumTimerDelay = tbc_dispatch_time_interval(maximumDelay) ?: DISPATCH_TIME_FOREVER;
         _maximumTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
 
         dispatch_source_set_timer(_timer, DISPATCH_TIME_FOREVER, DISPATCH_TIME_FOREVER, DISPATCH_TIME_FOREVER);
