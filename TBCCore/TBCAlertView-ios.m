@@ -79,8 +79,9 @@
     self.alertView.message = message;
 }
 
-- (BOOL)visible {
-    return self.alertView.isVisible;
+@dynamic visible;
+- (BOOL)isVisible {
+    return self.alertView.visible;
 }
 
 #pragma mark - UIAlertViewDelegate Methods

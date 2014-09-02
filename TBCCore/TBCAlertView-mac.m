@@ -7,7 +7,7 @@
 @interface TBCAlertView()
 @property(nonatomic, strong, readonly) NSAlert *alert;
 @property(nonatomic, strong, readonly) NSMutableArray *handlers;
-@property(nonatomic, assign) BOOL visible;
+@property(nonatomic, getter=isVisible) BOOL visible;
 @end
 
 @implementation TBCAlertView
@@ -94,10 +94,6 @@
 
 - (void)setMessage:(NSString *)message {
     self.alert.informativeText = message;
-}
-
-- (BOOL)visible {
-    return self.visible;
 }
 
 @end
