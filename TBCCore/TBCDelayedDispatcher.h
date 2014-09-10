@@ -38,4 +38,6 @@ extern NSTimeInterval const TBCDelayedDispatcherDelayForever;
 - (void)arm;
 - (void)disarm;
 
+- (void)fireIfArmed;
+
 @end

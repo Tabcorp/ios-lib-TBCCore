@@ -102,4 +102,11 @@ NSTimeInterval const TBCDelayedDispatcherDelayForever = INFINITY;
     _maximumTimerArmed = false;
 }
 
+- (void)fireIfArmed {
+    if (_maximumTimerArmed) {
+        [self disarm];
+        _block();
+    }
+}
+
 @end
