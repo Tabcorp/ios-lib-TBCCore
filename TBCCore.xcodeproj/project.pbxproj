@@ -58,6 +58,9 @@
 		FD4936E0199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */; };
 		FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */; };
 		FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4A893219B548D100D070E2 /* TBCActionSheet.h */; };
+		FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */; };
+		FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
+		FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,8 @@
 		FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDelayedDispatcherTests.m; sourceTree = "<group>"; };
 		FD4A893219B548D100D070E2 /* TBCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCActionSheet.h; sourceTree = "<group>"; };
 		FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCActionSheet-ios.m"; sourceTree = "<group>"; };
+		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
+		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +274,8 @@
 				A30AF178199B53F000E2E356 /* TBCDispatch.m */,
 				FD4936B91999BAB40079A886 /* TBCObjC.h */,
 				FD4936BA1999BAB40079A886 /* TBCObjC.m */,
+				FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */,
+				FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */,
 				A377E0D61992529D007F2F47 /* TBCTimeInterval.h */,
 				A377E0D71992529D007F2F47 /* TBCTimeInterval.m */,
 				A30AF172199B195400E2E356 /* TBCTimer.h */,
@@ -362,6 +369,7 @@
 				A30AF174199B195400E2E356 /* TBCTimer.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
+				FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */,
 				FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
 			);
@@ -577,6 +585,7 @@
 				FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
+				FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17A199B53F000E2E356 /* TBCDispatch.m in Sources */,
 			);
@@ -600,6 +609,7 @@
 			files = (
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
+				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A30AF176199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
