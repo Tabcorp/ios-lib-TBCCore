@@ -1,4 +1,7 @@
 language: objective-c
+branches:
+  only:
+    - master
 
 env:
   - XCODE_SCHEME="TBCCore-iOS" XCODE_SDK=iphonesimulator
