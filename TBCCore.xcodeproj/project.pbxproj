@@ -21,6 +21,9 @@
 		A30AF17E199B58ED00E2E356 /* TBCDispatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */; };
 		A30AF180199B88F500E2E356 /* TBCTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17F199B88F500E2E356 /* TBCTimerTests.m */; };
 		A30AF181199B88F500E2E356 /* TBCTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A30AF17F199B88F500E2E356 /* TBCTimerTests.m */; };
+		A31013F519E60F7D00092156 /* TBCCurrencyFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */; };
+		A31013F619E60F7D00092156 /* TBCCurrencyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */; };
+		A31013F719E60F7D00092156 /* TBCCurrencyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */; };
 		A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */ = {isa = PBXBuildFile; fileRef = A377E0CE19925129007F2F47 /* TBCTypeSafety.h */; };
 		A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0CF19925129007F2F47 /* TBCTypeSafety.m */; };
 		A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */ = {isa = PBXBuildFile; fileRef = A377E0CF19925129007F2F47 /* TBCTypeSafety.m */; };
@@ -120,6 +123,8 @@
 		A30AF178199B53F000E2E356 /* TBCDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDispatch.m; sourceTree = "<group>"; };
 		A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDispatchTests.m; sourceTree = "<group>"; };
 		A30AF17F199B88F500E2E356 /* TBCTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTimerTests.m; sourceTree = "<group>"; };
+		A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCCurrencyFormatter.h; sourceTree = "<group>"; };
+		A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCurrencyFormatter.m; sourceTree = "<group>"; };
 		A377E0CE19925129007F2F47 /* TBCTypeSafety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCTypeSafety.h; sourceTree = "<group>"; };
 		A377E0CF19925129007F2F47 /* TBCTypeSafety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafety.m; sourceTree = "<group>"; };
 		A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCTypeSafetyTests.m; sourceTree = "<group>"; };
@@ -268,6 +273,8 @@
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
 				A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */,
 				A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */,
+				A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */,
+				A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */,
 				FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */,
 				FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */,
 				A30AF177199B53F000E2E356 /* TBCDispatch.h */,
@@ -367,6 +374,7 @@
 				A377E0DC199253ED007F2F47 /* TBCAlertView.h in Headers */,
 				A30AF179199B53F000E2E356 /* TBCDispatch.h in Headers */,
 				A30AF174199B195400E2E356 /* TBCTimer.h in Headers */,
+				A31013F519E60F7D00092156 /* TBCCurrencyFormatter.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */,
@@ -588,6 +596,7 @@
 				FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17A199B53F000E2E356 /* TBCDispatch.m in Sources */,
+				A31013F619E60F7D00092156 /* TBCCurrencyFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +622,7 @@
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A30AF176199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
+				A31013F719E60F7D00092156 /* TBCCurrencyFormatter.m in Sources */,
 				FD4936BD1999BAB40079A886 /* TBCObjC.m in Sources */,
 				A30AF17B199B53F000E2E356 /* TBCDispatch.m in Sources */,
 			);
