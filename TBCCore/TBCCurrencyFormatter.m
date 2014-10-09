@@ -2,19 +2,48 @@
 
 #import "TBCCurrencyFormatter.h"
 
-@implementation TBCCurrencyFormatter
 
-+ (NSNumberFormatter *)formatterForAustralianCurrency {
-    NSNumberFormatter* currencyFormatter = [[NSNumberFormatter alloc] init];
+@interface TBCCurrencyFormatter : NSObject<TBCCurrencyFormatter>
+@property (nonatomic,assign) NSUInteger maximumFractionDigits;
+@end
+
+@implementation TBCCurrencyFormatter {
+@private
+    NSNumberFormatter *_formatter;
+}
+- (instancetype)initWithNumberFormatter:(NSNumberFormatter *)formatter {
+    if ((self = [super init])) {
+        _formatter = formatter;
+    }
+    return self;
+}
+- (NSDecimalNumber *)numberFromString:(NSString *)string {
+    return (NSDecimalNumber *)[_formatter numberFromString:string];
+}
+- (NSString *)stringFromNumber:(NSNumber *)string {
+    return [_formatter stringFromNumber:string];
+}
+- (NSString *)stringForObjectValue:(id)object {
+    return [_formatter stringForObjectValue:object];
+}
+- (NSUInteger)maximumFractionDigits {
+    return [_formatter maximumFractionDigits];
+}
+- (void)setMaximumFractionDigits:(NSUInteger)maximumFractionDigits {
+    return [_formatter setMaximumFractionDigits:maximumFractionDigits];
+}
+@end
+
+TBCCurrencyFormatter *TBCCurrencyFormatterForAustralianCurrency(void) {
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
     currencyFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_AU"];
-    return currencyFormatter;
+    currencyFormatter.generatesDecimalNumbers = YES;
+    return [[TBCCurrencyFormatter alloc] initWithNumberFormatter:currencyFormatter];
 }
 
-+ (NSNumberFormatter *)formatterForAustralianCurrencyWholeDollars {
-    NSNumberFormatter* currencyFormatter = [self formatterForAustralianCurrency];
+TBCCurrencyFormatter *TBCCurrencyFormatterForAustralianCurrencyWholeDollars(void) {
+    TBCCurrencyFormatter *currencyFormatter = TBCCurrencyFormatterForAustralianCurrency();
     currencyFormatter.maximumFractionDigits = 0;
     return currencyFormatter;
 }
-
-@end

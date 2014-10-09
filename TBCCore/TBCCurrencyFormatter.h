@@ -2,9 +2,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TBCCurrencyFormatter : NSObject
 
-+ (NSNumberFormatter *)formatterForAustralianCurrency;
-+ (NSNumberFormatter *)formatterForAustralianCurrencyWholeDollars;
-
+@protocol TBCCurrencyFormatter <NSObject>
+- (NSDecimalNumber *)numberFromString:(NSString *)string;
+- (NSString *)stringFromNumber:(NSNumber *)string;
+- (NSString *)stringForObjectValue:(id)object;
 @end
+
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForAustralianCurrency(void);
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForAustralianCurrencyWholeDollars(void);
