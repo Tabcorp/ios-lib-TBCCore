@@ -167,6 +167,7 @@
 		FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCActionSheet-ios.m"; sourceTree = "<group>"; };
 		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
 		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
+		FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +274,7 @@
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
 				A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */,
 				A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */,
+				FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */,
 				A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */,
 				A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */,
 				FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */,
