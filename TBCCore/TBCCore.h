@@ -4,6 +4,7 @@
 #import <TBCCore/TBCActionSheet.h>
 #import <TBCCore/TBCAlertView.h>
 #import <TBCCore/TBCCurrencyFormatter.h>
+#import <TBCCore/TBCDebugging.h>
 #import <TBCCore/TBCDelayedDispatcher.h>
 #import <TBCCore/TBCDispatch.h>
 #import <TBCCore/TBCObjC.h>

@@ -64,6 +64,9 @@
 		FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */; };
 		FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
 		FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
+		FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */; };
+		FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
+		FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +171,8 @@
 		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
 		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
 		FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreDefines.h; sourceTree = "<group>"; };
+		FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDebugging.h; sourceTree = "<group>"; };
+		FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDebugging.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +282,8 @@
 				FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */,
 				A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */,
 				A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */,
+				FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */,
+				FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */,
 				FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */,
 				FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */,
 				A30AF177199B53F000E2E356 /* TBCDispatch.h */,
@@ -379,6 +386,7 @@
 				A31013F519E60F7D00092156 /* TBCCurrencyFormatter.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
+				FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */,
 				FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */,
 				FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
@@ -593,6 +601,7 @@
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */,
+				FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
@@ -620,6 +629,7 @@
 			files = (
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
+				FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A30AF176199B195400E2E356 /* TBCTimer.m in Sources */,
