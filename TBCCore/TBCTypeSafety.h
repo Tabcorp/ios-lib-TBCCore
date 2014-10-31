@@ -71,6 +71,14 @@ id _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const object);
 id _TBCAssertClass(const Class klass, id<NSObject> const object);
 #define TBCAssertClass(type, object) ((type *)_TBCAssertClass([type class], (object)))
 
+#define DECLARE_TBCAssert(type) static inline type *TBCAssert##type(id<NSObject> const object) {return TBCAssertClass(type,object);};
+DECLARE_TBCAssert(NSArray);
+DECLARE_TBCAssert(NSDecimalNumber);
+DECLARE_TBCAssert(NSDictionary);
+DECLARE_TBCAssert(NSNumber);
+DECLARE_TBCAssert(NSString);
+#undef DECLARE_TBCAssert
+
 /**
  Assert an object is nil, an instance of a given class or an instance of any class that inherits from that class
  
@@ -81,3 +89,11 @@ id _TBCAssertClass(const Class klass, id<NSObject> const object);
  */
 id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object);
 #define TBCAssertClassOrNil(type, object) ((type *)_TBCAssertClassOrNil([type class], (object)))
+
+#define DECLARE_TBCAssertOrNil(type) static inline type *TBCAssert##type##OrNil(id<NSObject> const object) {return TBCAssertClassOrNil(type,object);};
+DECLARE_TBCAssertOrNil(NSArray);
+DECLARE_TBCAssertOrNil(NSDecimalNumber);
+DECLARE_TBCAssertOrNil(NSDictionary);
+DECLARE_TBCAssertOrNil(NSNumber);
+DECLARE_TBCAssertOrNil(NSString);
+#undef DECLARE_TBCAssertOrNil
