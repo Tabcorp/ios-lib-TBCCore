@@ -2,7 +2,7 @@
 
 #import "NSArray+TBCCore.h"
 
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 @implementation NSArray(TBCCore)
 
