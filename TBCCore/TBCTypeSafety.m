@@ -24,18 +24,18 @@ id _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const object) {
     return [object conformsToProtocol:protocol] ? object : nil;
 }
 
-id _TBCAssertClass(const Class klass, id<NSObject> const object) {
+id _TBCAssertClass(const Class klass, id<NSObject> const object, char const * const expr) {
     if ([object isKindOfClass:klass]) {
         return object;
     }
-    NSCAssert2(false, @"Type assertion failed: %@ not of type %@", object, klass);
+    NSCAssert(false, @"Type assertion failed: %s (%@) not of type %@", expr, object, klass);
     return nil;
 }
 
-id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object) {
+id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object, char const * const expr) {
     if (object == nil || [object isKindOfClass:klass]) {
         return object;
     }
-    NSCAssert2(false, @"Type assertion failed: %@ not of type %@ or nil", object, klass);
+    NSCAssert(false, @"Type assertion failed: %s (%@) not of type %@ or nil", expr, object, klass);
     return nil;
 }

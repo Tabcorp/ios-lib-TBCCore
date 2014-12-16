@@ -68,8 +68,8 @@ id _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const object);
  
  @return `object` if it is an instance of, or an instance of a class derived from `klass`, otherwise asserts and returns `nil`
  */
-id _TBCAssertClass(const Class klass, id<NSObject> const object);
-#define TBCAssertClass(type, object) ((type *)_TBCAssertClass([type class], (object)))
+id _TBCAssertClass(const Class klass, id<NSObject> const object, char const * const expr);
+#define TBCAssertClass(type, object) ((type *)_TBCAssertClass([type class], (object), #object))
 
 #define DECLARE_TBCAssert(type) static inline type *TBCAssert##type(id<NSObject> const object) {return TBCAssertClass(type,object);};
 DECLARE_TBCAssert(NSArray);
@@ -87,8 +87,8 @@ DECLARE_TBCAssert(NSString);
  
  @return `object` if it is nil, an instance of `klass`, or an instance of a class derived from `klass`; otherwise asserts and returns `nil`
  */
-id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object);
-#define TBCAssertClassOrNil(type, object) ((type *)_TBCAssertClassOrNil([type class], (object)))
+id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object, char const * const expr);
+#define TBCAssertClassOrNil(type, object) ((type *)_TBCAssertClassOrNil([type class], (object), #object))
 
 #define DECLARE_TBCAssertOrNil(type) static inline type *TBCAssert##type##OrNil(id<NSObject> const object) {return TBCAssertClassOrNil(type,object);};
 DECLARE_TBCAssertOrNil(NSArray);
