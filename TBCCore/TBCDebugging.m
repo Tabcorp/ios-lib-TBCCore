@@ -117,4 +117,22 @@ static void TBCKVODebuggingNSObject_didChangeValueForKey_(NSObject *self, SEL _s
 
 @end
 
+void _TBCExpectDealloc(id object, char *file, int line, dispatch_block_t expectationFailedBlock) {
+    __weak id wObject = object;
+    NSArray * const callStackSymbols = [NSThread callStackSymbols];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        id sObject = wObject;
+        if (sObject) {
+            NSLog(@"%@ object at %p failed to be deallocated when expected", [sObject class], sObject);
+            NSLog(@"at %s:%d", file, line);
+            NSLog(@"Call Stack:\n%@", [callStackSymbols componentsJoinedByString:@"\n"]);
+            expectationFailedBlock();
+        }
+    });
+}
+
+void _TBCExpectDeallocFailed(void) {
+    NSCAssert(0,@"");
+}
+
 #endif

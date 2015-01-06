@@ -23,4 +23,26 @@
 + (id<TBCKVODebugger>)debuggerWithSink:(id<TBCKVODebuggingSink>)sink;
 @end
 
+/**
+ Declares an expectation that the object will be deallocated shortly
+
+ Call this method immediately prior to performing an operation that you expect should result in the deallocation
+ of the passed object. Should the object not be deallocated after 100ms, an assertion will be fired.
+ 
+ For example:
+ 
+ TBCExpectDealloc(self);
+ [self.navigationController popViewControllerAnimated:NO];
+
+ @param object The object that you expect to be deallocated
+ 
+ */
+void _TBCExpectDealloc(id object, char *file, int line, dispatch_block_t expectationFailedBlock);
+void _TBCExpectDeallocFailed(void);
+#define TBCExpectDealloc(object) (_TBCExpectDealloc((object),__FILE__,__LINE__,^{_TBCExpectDeallocFailed();}))
+
+#else
+
+#define TBCExpectDealloc(object)
+
 #endif
