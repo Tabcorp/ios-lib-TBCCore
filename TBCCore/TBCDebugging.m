@@ -132,7 +132,7 @@ void _TBCExpectDealloc(id object, char *file, int line, dispatch_block_t expecta
 }
 
 void _TBCExpectDeallocFailed(void) {
-    NSCAssert(0,@"");
+    (void)0;
 }
 
 #endif
