@@ -14,26 +14,45 @@
 
 - (NSArray *)tbc_map:(TBCCoreMapBlock)block {return [self tbc_arrayByApplyingMap:block];}
 
-- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapBlock)block {
-    NSParameterAssert(block);
-    
-    const NSUInteger count = self.count;
-    __block NSUInteger i = 0;
-    id __strong *temp = (id __strong *)calloc(count, sizeof(id));
-    
-    [self enumerateObjectsUsingBlock:^(id obj, __unused NSUInteger idx, __unused BOOL *stop) {
-        id mapped = block(obj);
-        if (mapped) {
-            temp[i++] = mapped;
-        }
-    }];
-    
-    NSArray *result = [NSArray arrayWithObjects:temp count:i];
-    while ( i > 0 ) {
-        temp[--i] = nil;
-    }
-    free(temp);
+#define X(__retType, __initializer) \
+    NSParameterAssert(block);\
+    __block NSUInteger i = 0;\
+    id __strong *objects = (id __strong *)calloc(self.count, sizeof(id));\
+    [self enumerateObjectsUsingBlock:^(id obj, __unused NSUInteger idx, __unused BOOL *stop) {\
+        id mapped = block(obj);\
+        if (mapped) {\
+            objects[i++] = mapped;\
+        }\
+    }];\
+    const NSUInteger count = i;\
+    __retType *result = __initializer;\
+    while ( i > 0 ) {\
+        objects[--i] = nil;\
+    }\
+    free(objects);\
     return result;
+
+
+- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapBlock)block {
+    X(NSArray, [NSArray arrayWithObjects:objects count:count]);
 }
+
+- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapBlock)block {
+    X(NSMutableArray, [NSMutableArray arrayWithObjects:objects count:count]);
+}
+
+- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapBlock)block {
+    X(NSSet, [NSSet setWithObjects:objects count:count]);
+}
+
+- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapBlock)block {
+    X(NSMutableSet, [NSMutableSet setWithObjects:objects count:count]);
+}
+
+- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapBlock)block {
+    X(NSCountedSet, [NSCountedSet setWithObjects:objects count:count]);
+}
+
+#undef X
 
 @end
