@@ -6,6 +6,7 @@
 #if defined(DEBUG) && DEBUG != 0
 
 #import <objc/runtime.h>
+#import <sys/sysctl.h>
 
 
 static NSArray *TBCKVODebuggingDefaultNSLogSinkIngoredClassPrefixes = nil;
@@ -132,7 +133,40 @@ void _TBCExpectDealloc(id object, char *file, int line, dispatch_block_t expecta
 }
 
 void _TBCExpectDeallocFailed(void) {
-    (void)0;
+    TBCDebugger();
+}
+
+
+
+BOOL TBCIsBeingDebugged(void) {
+    int mib[4] = {
+        CTL_KERN,
+        KERN_PROC,
+        KERN_PROC_PID,
+        getpid(),
+    };
+    
+    struct kinfo_proc info;
+    info.kp_proc.p_flag = 0; // init the field we'll read
+    
+    size_t infoSize = sizeof(info);
+    if (!sysctl(mib, sizeof(mib)/sizeof(*mib), &info, &infoSize, NULL, 0)) {
+        return !!(info.kp_proc.p_flag & P_TRACED);
+    }
+    
+    return NO;
+}
+
+void TBCDebugger() {
+    if (TBCIsBeingDebugged()) {
+#if defined(__x86_64__) && __x86_64__ != 0
+        asm("int3");
+#elif defined(__i386__) && __i386__ != 0
+        asm("int3");
+#else
+        __builtin_trap();
+#endif
+    }
 }
 
 #endif

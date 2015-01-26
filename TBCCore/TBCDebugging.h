@@ -41,8 +41,13 @@ void _TBCExpectDealloc(id object, char *file, int line, dispatch_block_t expecta
 void _TBCExpectDeallocFailed(void);
 #define TBCExpectDealloc(object) (_TBCExpectDealloc((object),__FILE__,__LINE__,^{_TBCExpectDeallocFailed();}))
 
+BOOL TBCIsBeingDebugged(void);
+extern void TBCDebugger(void);
+
 #else
 
 #define TBCExpectDealloc(object)
+# define TBCIsBeingDebugged() (NO)
+# define TBCDebugger() do{}while(0)
 
 #endif
