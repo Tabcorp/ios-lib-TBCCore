@@ -5,6 +5,7 @@
 #import "TBCPredicateBlock.h"
 
 typedef id (^TBCCoreMapObjectToObjectBlock)(id object);
+typedef NSUInteger (^TBCCoreMapObjectToNSUIntegerBlock)(id object);
 
 @interface NSArray(TBCCore)
 
@@ -15,6 +16,7 @@ typedef id (^TBCCoreMapObjectToObjectBlock)(id object);
 - (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSMutableIndexSet *)tbc_mutableIndexSetByApplyingMap:(TBCCoreMapObjectToNSUIntegerBlock)block;
 
 - (NSArray *)tbc_filter:(TBCObjectPredicateBlock)predicateBlock;
 

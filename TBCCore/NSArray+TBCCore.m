@@ -62,6 +62,17 @@
 
 #undef X
 
+- (NSMutableIndexSet *)tbc_mutableIndexSetByApplyingMap:(TBCCoreMapObjectToNSUIntegerBlock)block {
+    NSParameterAssert(block);
+    NSMutableIndexSet * const indexSet = [[NSMutableIndexSet alloc] init];
+    for (id object in self) {
+        NSUInteger const index = block(object);
+        [indexSet addIndex:index];
+    }
+    return indexSet;
+}
+
+
 - (NSArray *)tbc_filter:(TBCObjectPredicateBlock)predicateBlock {return [self tbc_arrayByFilteringWithPredicateBlock:predicateBlock];}
 
 #define X(__retType, __initializer)\
