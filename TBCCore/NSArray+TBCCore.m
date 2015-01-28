@@ -19,7 +19,7 @@
     }
 }
 
-- (NSArray *)tbc_map:(TBCCoreMapBlock)block {return [self tbc_arrayByApplyingMap:block];}
+- (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block {return [self tbc_arrayByApplyingMap:block];}
 
 #define X(__retType, __initializer) \
     NSParameterAssert(block);\
@@ -40,23 +40,23 @@
     return result;
 
 
-- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapBlock)block {
+- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSArray, [NSArray arrayWithObjects:objects count:count]);
 }
 
-- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapBlock)block {
+- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSMutableArray, [NSMutableArray arrayWithObjects:objects count:count]);
 }
 
-- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapBlock)block {
+- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSSet, [NSSet setWithObjects:objects count:count]);
 }
 
-- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapBlock)block {
+- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSMutableSet, [NSMutableSet setWithObjects:objects count:count]);
 }
 
-- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapBlock)block {
+- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSCountedSet, [NSCountedSet setWithObjects:objects count:count]);
 }
 

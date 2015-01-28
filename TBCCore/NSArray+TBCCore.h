@@ -4,17 +4,17 @@
 
 #import "TBCPredicateBlock.h"
 
-typedef id (^TBCCoreMapBlock)(id object);
+typedef id (^TBCCoreMapObjectToObjectBlock)(id object);
 
 @interface NSArray(TBCCore)
 
-- (NSArray *)tbc_map:(TBCCoreMapBlock)block;
+- (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block;
 
-- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapBlock)block;
-- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapBlock)block;
-- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapBlock)block;
-- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapBlock)block;
-- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapBlock)block;
+- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 
 - (NSArray *)tbc_filter:(TBCObjectPredicateBlock)predicateBlock;
 
