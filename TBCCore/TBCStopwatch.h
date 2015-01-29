@@ -8,6 +8,7 @@ typedef void (^TBCStopwatchBlock)(NSTimeInterval interval);
 
 @property (nonatomic,assign) BOOL firesOnDealloc;
 
+- (instancetype)init;
 - (instancetype)initWithBlock:(TBCStopwatchBlock)block;
 - (instancetype)initWithQueue:(dispatch_queue_t)queue block:(TBCStopwatchBlock)block __attribute__((objc_designated_initializer));
 
@@ -17,5 +18,8 @@ typedef void (^TBCStopwatchBlock)(NSTimeInterval interval);
 - (void)stop;
 
 - (void)cancel;
+
+- (NSTimeInterval)currentTimeInterval;
+- (BOOL)isActive;
 
 @end

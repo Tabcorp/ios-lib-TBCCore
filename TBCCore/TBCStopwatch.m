@@ -18,13 +18,15 @@ typedef NS_ENUM(NSUInteger, TBCStopwatchState) {
     NSDate *_chunkStartDate;
 }
 
+- (instancetype)init {
+    return [self initWithQueue:nil block:nil];
+}
+
 - (instancetype)initWithBlock:(TBCStopwatchBlock)block {
     return [self initWithQueue:nil block:block];
 }
 
 - (instancetype)initWithQueue:(dispatch_queue_t)queue block:(TBCStopwatchBlock)block {
-    NSParameterAssert(block);
-
     if (!queue) {
         queue = dispatch_get_main_queue();
     }
@@ -91,6 +93,24 @@ typedef NS_ENUM(NSUInteger, TBCStopwatchState) {
 
 - (void)cancel {
     _state = TBCStopwatchNotStarted;
+}
+
+- (NSTimeInterval)currentTimeInterval {
+    NSTimeInterval result = _durationOfPreviousChunks;
+    if (_state == TBCStopwatchRunning) {
+        result += [[NSDate date] timeIntervalSinceDate:_chunkStartDate];
+    }
+    return result;
+}
+
+- (BOOL)isActive {
+    switch (_state) {
+        case TBCStopwatchNotStarted:
+            return NO;
+        case TBCStopwatchRunning:
+        case TBCStopwatchPaused:
+            return YES;
+    }
 }
 
 - (void)tbc_beginChunk {
