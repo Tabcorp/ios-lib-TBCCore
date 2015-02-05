@@ -5,13 +5,16 @@
 #import "TBCPredicateBlock.h"
 
 typedef id (^TBCCoreMapObjectToObjectBlock)(id object);
+typedef id (^TBCCoreMapObjectAndIndexToObjectBlock)(id object, NSUInteger index);
 typedef NSUInteger (^TBCCoreMapObjectToNSUIntegerBlock)(id object);
 
 @interface NSArray(TBCCore)
 
 - (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block;
+- (NSArray *)tbc_mapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
 
 - (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSArray *)tbc_arrayByApplyingMapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
 - (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;

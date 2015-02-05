@@ -12,7 +12,12 @@
         IMP imp = class_getMethodImplementation(self, @selector(tbc_arrayByApplyingMap:));
         class_replaceMethod(self, @selector(tbc_map:), imp, "@@:@");
     }
-    
+
+    {
+        IMP imp = class_getMethodImplementation(self, @selector(tbc_arrayByApplyingMapWithIndex:));
+        class_replaceMethod(self, @selector(tbc_mapWithIndex:), imp, "@@:@");
+    }
+
     {
         IMP imp = class_getMethodImplementation(self, @selector(tbc_arrayByFilteringWithPredicateBlock:));
         class_replaceMethod(self, @selector(tbc_filter:), imp, "@@:@");
@@ -20,6 +25,7 @@
 }
 
 - (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block {return [self tbc_arrayByApplyingMap:block];}
+- (NSArray *)tbc_mapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block {return [self tbc_arrayByApplyingMapWithIndex:block];}
 
 #define X(__retType, __initializer) \
     NSParameterAssert(block);\
@@ -39,9 +45,31 @@
     free(objects);\
     return result;
 
+#define X_WITH_INDEX(__retType, __initializer) \
+    NSParameterAssert(block);\
+    __block NSUInteger i = 0;\
+    id __strong *objects = (id __strong *)calloc(self.count, sizeof(id));\
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, __unused BOOL *stop) {\
+        id mapped = block(obj, idx);\
+        if (mapped) {\
+            objects[i++] = mapped;\
+        }\
+    }];\
+    const NSUInteger count = i;\
+    __retType *result = __initializer;\
+    while ( i > 0 ) {\
+        objects[--i] = nil;\
+    }\
+    free(objects);\
+    return result;
+
 
 - (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSArray, [NSArray arrayWithObjects:objects count:count]);
+}
+
+- (NSArray *)tbc_arrayByApplyingMapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block {
+    X_WITH_INDEX(NSArray, [NSArray arrayWithObjects:objects count:count]);
 }
 
 - (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
