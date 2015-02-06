@@ -44,10 +44,19 @@ void _TBCExpectDeallocFailed(void);
 BOOL TBCIsBeingDebugged(void);
 extern void TBCDebugger(void);
 
+#define TBCDevAssert(_condition) \
+    do { \
+        if (!(_condition)) { \
+            TBCDebugger();\
+        } \
+    } while(0)
+
+
 #else
 
 #define TBCExpectDealloc(object)
-# define TBCIsBeingDebugged() (NO)
-# define TBCDebugger() do{}while(0)
+#define TBCIsBeingDebugged() (NO)
+#define TBCDebugger() do{}while(0)
+#define TBCDevAssert(_condition) do{}while(0)
 
 #endif
