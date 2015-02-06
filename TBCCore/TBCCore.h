@@ -1,6 +1,7 @@
 //  Copyright (c) 2014 Tabcorp. All rights reserved.
 
 #import <TBCCore/NSArray+TBCCore.h>
+#import <TBCCore/NSMutableDictionary+TBCCore.h>
 #import <TBCCore/TBCCoreDefines.h>
 #import <TBCCore/TBCActionSheet.h>
 #import <TBCCore/TBCAlertView.h>

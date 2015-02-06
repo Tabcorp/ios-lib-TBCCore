@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3017FCE1A84663D0055A22A /* NSMutableDictionary+TBCCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */; };
+		A3017FCF1A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */; };
+		A3017FD01A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */; };
 		A3084F751987E2EB00C30AFA /* TBCCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3084F741987E2EB00C30AFA /* TBCCore.h */; };
 		A3084F7E1987E2EB00C30AFA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F7D1987E2EB00C30AFA /* XCTest.framework */; };
 		A3084F7F1987E2EB00C30AFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6F1987E2EB00C30AFA /* Foundation.framework */; };
@@ -124,6 +127,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TBCCore.h"; sourceTree = "<group>"; };
+		A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TBCCore.m"; sourceTree = "<group>"; };
 		A3084F6C1987E2EB00C30AFA /* libTBCCore-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTBCCore-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3084F6F1987E2EB00C30AFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3084F741987E2EB00C30AFA /* TBCCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCore.h; sourceTree = "<group>"; };
@@ -293,6 +298,8 @@
 				A3084F741987E2EB00C30AFA /* TBCCore.h */,
 				A370017F1A2D38FA0091B978 /* NSArray+TBCCore.h */,
 				A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */,
+				A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */,
+				A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */,
 				FD4A893219B548D100D070E2 /* TBCActionSheet.h */,
 				FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */,
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
@@ -412,6 +419,7 @@
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */,
+				A3017FCE1A84663D0055A22A /* NSMutableDictionary+TBCCore.h in Headers */,
 				FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */,
 				FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */,
 				A38B6CB71A70B6AD008717C7 /* TBCPredicateBlock.h in Headers */,
@@ -632,6 +640,7 @@
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
 				A38B6CB81A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */,
 				A3C9ABCC1A688838002323ED /* TBCStopwatch.m in Sources */,
+				A3017FCF1A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */,
 				A377E0D91992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				FD4936BC1999BAB40079A886 /* TBCObjC.m in Sources */,
@@ -663,6 +672,7 @@
 				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				A3C9ABCD1A688838002323ED /* TBCStopwatch.m in Sources */,
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
+				A3017FD01A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */,
 				A38B6CB91A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */,
 				A30AF176199B195400E2E356 /* TBCTimer.m in Sources */,
 				A377E0E2199253F2007F2F47 /* TBCAlertView-mac.m in Sources */,
