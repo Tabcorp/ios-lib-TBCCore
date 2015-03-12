@@ -33,4 +33,8 @@
 - (NSString *)tbc_extractStringForKey:(id)aKey;
 - (NSString *)tbc_extractStringIfExistsForKey:(id)aKey;
 
+- (NSNumber *)tbc_extractNumberForKey:(id)aKey;
+- (NSNumber *)tbc_extractNumberIfExistsForKey:(id)aKey;
+
+
 @end

@@ -119,5 +119,29 @@
     XCTAssertEqual([d count], (NSUInteger)0);
 }
 
+- (void)testExtractNumber {
+    NSMutableDictionary *d = [@{@"a": @1} mutableCopy];
+    XCTAssertEqualObjects([d tbc_extractNumberForKey:@"a"], @1);
+    XCTAssertEqual([d count], (NSUInteger)0);
+}
+
+- (void)testExtractMissingNumber {
+    NSMutableDictionary *d = [@{@"a": @1} mutableCopy];
+    XCTAssertThrows([d tbc_extractNumberForKey:@"b"]);
+    XCTAssertEqual([d count], (NSUInteger)1);
+}
+
+- (void)testExtractNumberFromString {
+    NSMutableDictionary *d = [@{@"a": @"false"} mutableCopy];
+    XCTAssertThrows([d tbc_extractNumberForKey:@"a"]);
+    XCTAssertEqual([d count], (NSUInteger)0);
+}
+
+- (void)testExtractNumberAllowMiss {
+    NSMutableDictionary *d = [@{} mutableCopy];
+    XCTAssertNil([d tbc_extractNumberIfExistsForKey:@"a"]);
+    XCTAssertEqual([d count], (NSUInteger)0);
+}
+
 
 @end

@@ -339,13 +339,13 @@
 			isa = PBXGroup;
 			children = (
 				A37001821A2D40700091B978 /* NSArray+TBCCoreTests.m */,
+				D409CF851AB119FE009D214A /* NSMutableDictionary+TBCCoreTests.m */,
 				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
 				A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				A30AF17F199B88F500E2E356 /* TBCTimerTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
 				A3084F871987E2EB00C30AFA /* TBCCoreTests-Info.plist */,
-				D409CF851AB119FE009D214A /* NSMutableDictionary+TBCCoreTests.m */,
 			);
 			path = TBCCoreTests;
 			sourceTree = "<group>";

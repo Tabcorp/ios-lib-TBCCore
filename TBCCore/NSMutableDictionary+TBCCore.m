@@ -95,4 +95,17 @@
     return result;
 }
 
+- (NSNumber *)tbc_extractNumberForKey:(id)aKey {
+    NSNumber *result = [self tbc_extractObjectForKey:aKey expectingValue:YES withTransformationBlock:nil];
+    NSAssert(TBCEnsureNSNumber(result), @"expected number at %@, got %@", aKey, result);
+    return result;
+}
+
+- (NSNumber *)tbc_extractNumberIfExistsForKey:(id)aKey {
+    NSNumber *result = [self tbc_extractObjectForKey:aKey expectingValue:NO withTransformationBlock:nil];
+    NSAssert(!result || TBCEnsureNSNumber(result), @"expected number or nothing at %@, got %@", aKey, result);
+    return result;
+}
+
+
 @end
