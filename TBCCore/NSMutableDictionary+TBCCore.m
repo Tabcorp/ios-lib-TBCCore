@@ -53,4 +53,46 @@
     return result;
 }
 
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block {
+    return [self tbc_extractIntegerForKey:aKey expectingValue:NO withTransformationBlock:block];
+}
+
+- (NSInteger)tbc_extractIntegerForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block {
+    return [self tbc_extractIntegerForKey:aKey expectingValue:YES withTransformationBlock:block];
+}
+
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey {
+    return [self tbc_extractIntegerForKey:aKey expectingValue:NO withTransformationBlock:nil];
+}
+
+- (NSInteger)tbc_extractIntegerForKey:(id)aKey {
+    return [self tbc_extractIntegerForKey:aKey expectingValue:YES withTransformationBlock:nil];
+}
+
+- (NSInteger)tbc_extractIntegerForKey:(id)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(NSInteger(^)(id object))block_ {
+    NSInteger (^block)(id object) = block_ ? : ^NSInteger(id object) {
+        NSNumber *number = TBCEnsureNSNumber(object);
+        NSAssert(number, @"expected number at %@, got %@", aKey, object);
+        return [number integerValue];
+    };
+    id object = TBCEnsureNotNSNull([self objectForKey:aKey]);
+    [self removeObjectForKey:aKey];
+    if (expectValue) {
+        NSAssert(object != nil, @"extract failed to find value at key %@", aKey);
+    }
+    return object ? block(object) : 0;
+}
+
+- (NSString *)tbc_extractStringForKey:(id)aKey {
+    NSString *result = [self tbc_extractObjectForKey:aKey expectingValue:YES withTransformationBlock:nil];
+    NSAssert(TBCEnsureNSString(result), @"expected string at %@, got %@", aKey, result);
+    return result;
+}
+
+- (NSString *)tbc_extractStringIfExistsForKey:(id)aKey {
+    NSString *result = [self tbc_extractObjectForKey:aKey expectingValue:NO withTransformationBlock:nil];
+    NSAssert(!result || TBCEnsureNSString(result), @"expected string or nothing at %@, got %@", aKey, result);
+    return result;
+}
+
 @end

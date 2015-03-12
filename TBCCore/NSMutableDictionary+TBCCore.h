@@ -25,5 +25,12 @@
  */
 - (id)tbc_extractObjectForKey:(id)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(id(^)(id object))block;
 
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
+- (NSInteger)tbc_extractIntegerForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey;
+- (NSInteger)tbc_extractIntegerForKey:(id)aKey;
+
+- (NSString *)tbc_extractStringForKey:(id)aKey;
+- (NSString *)tbc_extractStringIfExistsForKey:(id)aKey;
 
 @end
