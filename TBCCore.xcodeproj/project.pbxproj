@@ -82,6 +82,7 @@
 		FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */; };
 		FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
 		FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
+		FDFFE7AA1ACCDB3F00F8B782 /* NSString+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFFE7A91ACCDB3F00F8B782 /* NSString+TBCCore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,8 @@
 		FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreDefines.h; sourceTree = "<group>"; };
 		FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDebugging.h; sourceTree = "<group>"; };
 		FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDebugging.m; sourceTree = "<group>"; };
+		FDFFE7A81ACCDB3F00F8B782 /* NSString+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TBCCore.h"; sourceTree = "<group>"; };
+		FDFFE7A91ACCDB3F00F8B782 /* NSString+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TBCCore.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +306,8 @@
 				A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */,
 				A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */,
 				A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */,
+				FDFFE7A81ACCDB3F00F8B782 /* NSString+TBCCore.h */,
+				FDFFE7A91ACCDB3F00F8B782 /* NSString+TBCCore.m */,
 				FD4A893219B548D100D070E2 /* TBCActionSheet.h */,
 				FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */,
 				A377E0DB199253ED007F2F47 /* TBCAlertView.h */,
@@ -642,6 +647,7 @@
 				FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
+				FDFFE7AA1ACCDB3F00F8B782 /* NSString+TBCCore.m in Sources */,
 				A38B6CB81A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */,
 				A3C9ABCC1A688838002323ED /* TBCStopwatch.m in Sources */,
 				A3017FCF1A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */,

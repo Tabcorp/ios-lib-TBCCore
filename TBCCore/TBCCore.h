@@ -2,6 +2,7 @@
 
 #import <TBCCore/NSArray+TBCCore.h>
 #import <TBCCore/NSMutableDictionary+TBCCore.h>
+#import <TBCCore/NSString+TBCCore.h>
 #import <TBCCore/TBCCoreDefines.h>
 #import <TBCCore/TBCActionSheet.h>
 #import <TBCCore/TBCAlertView.h>
