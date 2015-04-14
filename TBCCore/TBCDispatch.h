@@ -43,3 +43,11 @@ static inline uint64_t tbc_dispatch_time_interval(NSTimeInterval timeInterval) {
         return timeInterval * NSEC_PER_SEC;
     }
 }
+
+static inline void tbc_dispatch_after_delay(NSTimeInterval delay, dispatch_queue_t queue, dispatch_block_t block) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), queue, block);
+}
+
+static inline void tbc_dispatch_on_main_queue_after_delay(NSTimeInterval delay, dispatch_block_t block) {
+    tbc_dispatch_after_delay(delay, dispatch_get_main_queue(), block);
+}
