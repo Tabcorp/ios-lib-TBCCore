@@ -1,5 +1,7 @@
 //  Copyright (c) 2014 Tabcorp. All rights reserved.
 
+#import <TBCCore/TBCCoreTypes.h>
+#import <TBCCore/TBCPredicateBlock.h>
 #import <TBCCore/NSArray+TBCCore.h>
 #import <TBCCore/NSMutableDictionary+TBCCore.h>
 #import <TBCCore/NSString+TBCCore.h>

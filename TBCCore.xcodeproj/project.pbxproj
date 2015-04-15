@@ -196,6 +196,7 @@
 		FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCActionSheet-ios.m"; sourceTree = "<group>"; };
 		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
 		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
+		FDA926861ADE177F00C1BEE0 /* TBCCoreTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreTypes.h; sourceTree = "<group>"; };
 		FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreDefines.h; sourceTree = "<group>"; };
 		FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDebugging.h; sourceTree = "<group>"; };
 		FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDebugging.m; sourceTree = "<group>"; };
@@ -302,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				A3084F741987E2EB00C30AFA /* TBCCore.h */,
+				FDA926861ADE177F00C1BEE0 /* TBCCoreTypes.h */,
 				A370017F1A2D38FA0091B978 /* NSArray+TBCCore.h */,
 				A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */,
 				A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */,

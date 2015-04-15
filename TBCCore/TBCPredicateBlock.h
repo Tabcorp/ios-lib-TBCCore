@@ -2,7 +2,8 @@
 
 #import <Foundation/Foundation.h>
 
-typedef BOOL (^TBCObjectPredicateBlock)(id object);
+#import "TBCCoreTypes.h"
+
 
 extern TBCObjectPredicateBlock _TBCObjectIsKindOfClass(const Class klass);
 #define TBCObjectIsKindOfClass(type) (_TBCObjectIsKindOfClass([type class]))

@@ -2,11 +2,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TBCPredicateBlock.h"
+#import "TBCCoreTypes.h"
 
-typedef id (^TBCCoreMapObjectToObjectBlock)(id object);
-typedef id (^TBCCoreMapObjectAndIndexToObjectBlock)(id object, NSUInteger index);
-typedef NSUInteger (^TBCCoreMapObjectToNSUIntegerBlock)(id object);
 
 @interface NSArray(TBCCore)
 
