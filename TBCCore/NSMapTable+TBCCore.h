@@ -7,4 +7,6 @@
 
 @interface NSMapTable (TBCCore)
 
+- (void)tbc_setObjectsFromArray:(NSArray *)array forKeysGeneratedByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+
 @end
