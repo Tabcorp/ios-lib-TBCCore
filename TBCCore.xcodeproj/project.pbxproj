@@ -79,6 +79,7 @@
 		FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */; };
 		FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
 		FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
+		FDA926851ADE174600C1BEE0 /* NSMapTable+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA926841ADE174600C1BEE0 /* NSMapTable+TBCCore.m */; };
 		FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */; };
 		FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
 		FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
@@ -196,6 +197,8 @@
 		FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCActionSheet-ios.m"; sourceTree = "<group>"; };
 		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
 		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
+		FDA926831ADE174600C1BEE0 /* NSMapTable+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+TBCCore.h"; sourceTree = "<group>"; };
+		FDA926841ADE174600C1BEE0 /* NSMapTable+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+TBCCore.m"; sourceTree = "<group>"; };
 		FDA926861ADE177F00C1BEE0 /* TBCCoreTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreTypes.h; sourceTree = "<group>"; };
 		FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCCoreDefines.h; sourceTree = "<group>"; };
 		FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCDebugging.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */,
 				A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */,
 				A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */,
+				FDA926831ADE174600C1BEE0 /* NSMapTable+TBCCore.h */,
+				FDA926841ADE174600C1BEE0 /* NSMapTable+TBCCore.m */,
 				FDFFE7A81ACCDB3F00F8B782 /* NSString+TBCCore.h */,
 				FDFFE7A91ACCDB3F00F8B782 /* NSString+TBCCore.m */,
 				FD4A893219B548D100D070E2 /* TBCActionSheet.h */,
@@ -642,6 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA926851ADE174600C1BEE0 /* NSMapTable+TBCCore.m in Sources */,
 				A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */,
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,

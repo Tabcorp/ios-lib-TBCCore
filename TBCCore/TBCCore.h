@@ -4,6 +4,7 @@
 #import <TBCCore/TBCPredicateBlock.h>
 #import <TBCCore/NSArray+TBCCore.h>
 #import <TBCCore/NSMutableDictionary+TBCCore.h>
+#import <TBCCore/NSMapTable+TBCCore.h>
 #import <TBCCore/NSString+TBCCore.h>
 #import <TBCCore/TBCCoreDefines.h>
 #import <TBCCore/TBCActionSheet.h>
