@@ -9,10 +9,13 @@
 
 - (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block;
 - (NSArray *)tbc_mapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
+- (NSArray *)tbc_flatMap:(TBCCoreMapObjectToArrayBlock)block;
 
 - (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSArray *)tbc_arrayByApplyingMapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
+- (NSArray *)tbc_arrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block;
 - (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (NSMutableArray *)tbc_mutableArrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block;
 - (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
 - (NSOrderedSet *)tbc_orderedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;

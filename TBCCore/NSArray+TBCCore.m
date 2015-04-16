@@ -28,6 +28,7 @@
 
 - (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block {return [self tbc_arrayByApplyingMap:block];}
 - (NSArray *)tbc_mapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block {return [self tbc_arrayByApplyingMapWithIndex:block];}
+- (NSArray *)tbc_flatMap:(TBCCoreMapObjectToArrayBlock)block {return [self tbc_arrayByApplyingFlatMap:block];}
 
 #define X(__retType, __initializer) \
     NSParameterAssert(block);\
@@ -99,6 +100,18 @@
 }
 
 #undef X
+
+- (NSArray *)tbc_arrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block {
+    return [self tbc_mutableArrayByApplyingFlatMap:block].copy;
+}
+
+- (NSMutableArray *)tbc_mutableArrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block {
+    NSMutableArray * const accumulator = [[NSMutableArray alloc] initWithCapacity:self.count];
+    for (NSArray *array in [self tbc_arrayByApplyingMap:block]) {
+        [accumulator addObjectsFromArray:array];
+    }
+    return accumulator;
+}
 
 - (NSMutableIndexSet *)tbc_mutableIndexSetByApplyingMap:(TBCCoreMapObjectToNSUIntegerBlock)block {
     NSParameterAssert(block);
