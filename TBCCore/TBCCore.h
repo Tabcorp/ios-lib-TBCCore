@@ -3,6 +3,7 @@
 #import <TBCCore/TBCCoreTypes.h>
 #import <TBCCore/TBCPredicateBlock.h>
 #import <TBCCore/NSArray+TBCCore.h>
+#import <TBCCore/NSDictionary+TBCCore.h>
 #import <TBCCore/NSMutableDictionary+TBCCore.h>
 #import <TBCCore/NSMapTable+TBCCore.h>
 #import <TBCCore/NSString+TBCCore.h>
