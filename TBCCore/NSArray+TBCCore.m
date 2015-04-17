@@ -86,6 +86,14 @@
     X(NSMutableSet, [NSMutableSet setWithObjects:objects count:count]);
 }
 
+- (NSOrderedSet *)tbc_orderedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
+    X(NSOrderedSet, [NSOrderedSet orderedSetWithObjects:objects count:count]);
+}
+
+- (NSMutableOrderedSet *)tbc_mutableOrderedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
+    X(NSMutableOrderedSet, [NSMutableOrderedSet orderedSetWithObjects:objects count:count]);
+}
+
 - (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block {
     X(NSCountedSet, [NSCountedSet setWithObjects:objects count:count]);
 }
@@ -133,6 +141,14 @@
 
 - (NSMutableSet *)tbc_mutableSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock {
     X(NSMutableSet, [NSMutableSet setWithObjects:objects count:count]);
+}
+
+- (NSOrderedSet *)tbc_orderedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock {
+    X(NSOrderedSet, [NSOrderedSet orderedSetWithObjects:objects count:count]);
+}
+
+- (NSMutableOrderedSet *)tbc_mutableOrderedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock {
+    X(NSMutableOrderedSet, [NSMutableOrderedSet orderedSetWithObjects:objects count:count]);
 }
 
 - (NSCountedSet *)tbc_countedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock {
