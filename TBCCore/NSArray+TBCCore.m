@@ -2,6 +2,8 @@
 
 #import "NSArray+TBCCore.h"
 
+#include <libkern/OSAtomic.h>
+
 #import <objc/runtime.h>
 
 @implementation NSArray(TBCCore)
@@ -135,6 +137,54 @@
 
 - (NSCountedSet *)tbc_countedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock {
     X(NSCountedSet, [NSCountedSet setWithObjects:objects count:count]);
+}
+
+
+- (id)tbc_firstElementMatching:(TBCObjectPredicateBlock)predicate {
+    __block id match = nil;
+    [self enumerateObjectsUsingBlock:^(id obj, __unused NSUInteger idx, BOOL *stop) {
+        if (predicate(obj)) {
+            *stop = YES;
+            match = obj;
+        }
+    }];
+    return match;
+}
+
+- (NSUInteger)tbc_indexOfFirstElementMatching:(TBCObjectPredicateBlock)predicate {
+    __block NSUInteger matchingIndex = NSNotFound;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (predicate(obj)) {
+            *stop = YES;
+            matchingIndex = idx;
+        }
+    }];
+    return matchingIndex;
+}
+
+- (id)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicate {
+    __block id match = nil;
+    __block int32_t concurrencyGuard = 0;
+    [self enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, __unused NSUInteger idx, BOOL *stop) {
+        if (predicate(obj)) {
+            *stop = YES;
+            if (OSAtomicCompareAndSwap32(0, ~0, &concurrencyGuard)) {
+                match = obj;
+            }
+        }
+    }];
+    return match;
+}
+
+- (NSUInteger)tbc_indexOfAnyElementMatching:(TBCObjectPredicateBlock)predicate {
+    __block NSUInteger matchingIndex = NSNotFound;
+    [self enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (predicate(obj)) {
+            *stop = YES;
+            matchingIndex = idx;
+        }
+    }];
+    return matchingIndex;
 }
 
 @end

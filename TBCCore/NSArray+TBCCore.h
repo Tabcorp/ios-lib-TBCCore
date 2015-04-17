@@ -26,4 +26,9 @@
 - (NSMutableSet *)tbc_mutableSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
 - (NSCountedSet *)tbc_countedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
 
+- (id)tbc_firstElementMatching:(TBCObjectPredicateBlock)predicate;
+- (NSUInteger)tbc_indexOfFirstElementMatching:(TBCObjectPredicateBlock)predicate;
+- (id)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicate;
+- (NSUInteger)tbc_indexOfAnyElementMatching:(TBCObjectPredicateBlock)predicate;
+
 @end
