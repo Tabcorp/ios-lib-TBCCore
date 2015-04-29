@@ -30,6 +30,9 @@
 		A32272EA1ADF873A00CBF58F /* NSDictionary+TBCCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A32272E81ADF873A00CBF58F /* NSDictionary+TBCCore.h */; };
 		A32272EB1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A32272E91ADF873A00CBF58F /* NSDictionary+TBCCore.m */; };
 		A32272EC1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A32272E91ADF873A00CBF58F /* NSDictionary+TBCCore.m */; };
+		A34F8DE01AF09FCF006A46C5 /* NSSet+TBCCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A34F8DDE1AF09FCF006A46C5 /* NSSet+TBCCore.h */; };
+		A34F8DE11AF09FCF006A46C5 /* NSSet+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A34F8DDF1AF09FCF006A46C5 /* NSSet+TBCCore.m */; };
+		A34F8DE21AF09FCF006A46C5 /* NSSet+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A34F8DDF1AF09FCF006A46C5 /* NSSet+TBCCore.m */; };
 		A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */; };
 		A37001831A2D40700091B978 /* NSArray+TBCCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A37001821A2D40700091B978 /* NSArray+TBCCoreTests.m */; };
 		A37001841A2D40820091B978 /* NSArray+TBCCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A37001821A2D40700091B978 /* NSArray+TBCCoreTests.m */; };
@@ -152,6 +155,8 @@
 		A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCurrencyFormatter.m; sourceTree = "<group>"; };
 		A32272E81ADF873A00CBF58F /* NSDictionary+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TBCCore.h"; sourceTree = "<group>"; };
 		A32272E91ADF873A00CBF58F /* NSDictionary+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TBCCore.m"; sourceTree = "<group>"; };
+		A34F8DDE1AF09FCF006A46C5 /* NSSet+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+TBCCore.h"; sourceTree = "<group>"; };
+		A34F8DDF1AF09FCF006A46C5 /* NSSet+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+TBCCore.m"; sourceTree = "<group>"; };
 		A370017F1A2D38FA0091B978 /* NSArray+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TBCCore.h"; sourceTree = "<group>"; };
 		A37001801A2D38FA0091B978 /* NSArray+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TBCCore.m"; sourceTree = "<group>"; };
 		A37001821A2D40700091B978 /* NSArray+TBCCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TBCCoreTests.m"; sourceTree = "<group>"; };
@@ -320,6 +325,8 @@
 				A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */,
 				FDA926831ADE174600C1BEE0 /* NSMapTable+TBCCore.h */,
 				FDA926841ADE174600C1BEE0 /* NSMapTable+TBCCore.m */,
+				A34F8DDE1AF09FCF006A46C5 /* NSSet+TBCCore.h */,
+				A34F8DDF1AF09FCF006A46C5 /* NSSet+TBCCore.m */,
 				FDFFE7A81ACCDB3F00F8B782 /* NSString+TBCCore.h */,
 				FDFFE7A91ACCDB3F00F8B782 /* NSString+TBCCore.m */,
 				FD4A893219B548D100D070E2 /* TBCActionSheet.h */,
@@ -448,6 +455,7 @@
 				FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */,
 				A38B6CB71A70B6AD008717C7 /* TBCPredicateBlock.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
+				A34F8DE01AF09FCF006A46C5 /* NSSet+TBCCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +665,7 @@
 			files = (
 				FDA926851ADE174600C1BEE0 /* NSMapTable+TBCCore.m in Sources */,
 				A377E0DF199253F2007F2F47 /* TBCAlertView-ios.m in Sources */,
+				A34F8DE11AF09FCF006A46C5 /* NSSet+TBCCore.m in Sources */,
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */,
@@ -698,6 +707,7 @@
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
+				A34F8DE21AF09FCF006A46C5 /* NSSet+TBCCore.m in Sources */,
 				A3C9ABCD1A688838002323ED /* TBCStopwatch.m in Sources */,
 				FD4936CD1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				A3017FD01A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */,
