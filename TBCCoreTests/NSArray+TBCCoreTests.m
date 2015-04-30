@@ -32,4 +32,43 @@
     XCTAssertEqualObjects(mappedArray, expectedOutput);
 }
 
+- (void)testArrayByRemovingDuplicates {
+    {
+        NSArray *array = @[@"Alex",@"Adrian",@"Bruce",@"Kevin",@"Barry"];
+        NSArray *expectedOutput = @[@"Alex",@"Bruce",@"Kevin"];
+        
+        NSArray *result = [array tbc_arrayByRemovingDuplicatesWithEqualityBlock:^BOOL(NSString *a, NSString *b) {
+            return [a characterAtIndex:0] == [b characterAtIndex:0];
+        }];
+        XCTAssertEqualObjects(result, expectedOutput);
+    }
+    {
+        NSArray *array = @[];
+        NSArray *expectedOutput = @[];
+        
+        NSArray *result = [array tbc_arrayByRemovingDuplicatesWithEqualityBlock:^BOOL(NSString *a, NSString *b) {
+            return NO;
+        }];
+        XCTAssertEqualObjects(result, expectedOutput);
+    }
+    {
+        NSArray *array = @[@"Alex",@"Adrian",@"Bruce",@"Kevin",@"Barry"];
+        NSArray *expectedOutput = array.copy;
+        
+        NSArray *result = [array tbc_arrayByRemovingDuplicatesWithEqualityBlock:^BOOL(NSString *a, NSString *b) {
+            return NO;
+        }];
+        XCTAssertEqualObjects(result, expectedOutput);
+    }
+    {
+        NSArray *array = @[@"Alex",@"Adrian",@"Bruce",@"Kevin",@"Barry"];
+        NSArray *expectedOutput = @[@"Alex"];
+        
+        NSArray *result = [array tbc_arrayByRemovingDuplicatesWithEqualityBlock:^BOOL(NSString *a, NSString *b) {
+            return YES;
+        }];
+        XCTAssertEqualObjects(result, expectedOutput);
+    }
+}
+
 @end

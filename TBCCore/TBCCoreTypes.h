@@ -8,3 +8,4 @@ typedef NSUInteger (^TBCCoreMapObjectToNSUIntegerBlock)(id object);
 typedef NSArray *(^TBCCoreMapObjectToArrayBlock)(id object);
 
 typedef BOOL (^TBCObjectPredicateBlock)(id object);
+typedef BOOL (^TBCObjectObjectPredicateBlock)(id a, id b);

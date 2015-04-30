@@ -216,4 +216,22 @@
     return matchingIndex;
 }
 
+- (NSArray *)tbc_arrayByRemovingDuplicatesWithEqualityBlock:(TBCObjectObjectPredicateBlock)equalityBlock {
+    NSParameterAssert(equalityBlock);
+    __block NSUInteger count = 0;
+    id __unsafe_unretained * const objects = (id __unsafe_unretained *)calloc(self.count, sizeof(id));
+    [self enumerateObjectsUsingBlock:^(id object, __unused NSUInteger idx, __unused BOOL *stop) {
+        for (NSUInteger i=0; i < count; ++i) {
+            if (equalityBlock(object, objects[i])) {
+                return;
+            }
+        }
+        
+        objects[count++] = object;
+    }];
+    NSArray * const result = [NSArray arrayWithObjects:objects count:count];
+    free(objects);
+    return result;
+}
+
 @end

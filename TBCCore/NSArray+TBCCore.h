@@ -38,4 +38,6 @@
 - (id)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicate;
 - (NSUInteger)tbc_indexOfAnyElementMatching:(TBCObjectPredicateBlock)predicate;
 
+- (NSArray *)tbc_arrayByRemovingDuplicatesWithEqualityBlock:(TBCObjectObjectPredicateBlock)equalityBlock;
+
 @end
