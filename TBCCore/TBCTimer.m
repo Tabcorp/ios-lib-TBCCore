@@ -14,6 +14,11 @@ NSTimeInterval const TBCTimerIntervalForever = INFINITY;
     dispatch_source_t _source;
 }
 
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return [self initWithFireDate:nil interval:0 leeway:0 queue:nil block:nil];
+}
+
 - (id)initWithFireDate:(NSDate *)fireDate interval:(NSTimeInterval)interval leeway:(NSTimeInterval)leeway queue:(dispatch_queue_t)queue block:(dispatch_block_t)block {
     NSParameterAssert(interval > 0);
     NSParameterAssert(block);
