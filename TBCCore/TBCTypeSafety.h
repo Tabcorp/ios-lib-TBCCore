@@ -97,3 +97,25 @@ DECLARE_TBCAssertOrNil(NSDictionary);
 DECLARE_TBCAssertOrNil(NSNumber);
 DECLARE_TBCAssertOrNil(NSString);
 #undef DECLARE_TBCAssertOrNil
+
+/**
+ Assert an object conforms to a given protocol
+
+ @param protocol The protocol to test against
+ @param object The object to test
+
+ @return `object` if it conforms to `protocol`, otherwise asserts and returns `nil`
+ */
+id _TBCAssertProtocol(Protocol * const protocol, id<NSObject> const object, char const * const expr);
+#define TBCAssertProtocol(protocolName, object) ((id<protocolName>)_TBCAssertProtocol(@protocol(protocolName), (object), #object))
+
+/**
+ Assert an object is nil or conforms to a given protocol
+
+ @param protocol The protocol to test against
+ @param object The object to test
+
+ @return `object` if it is nil or conforms to `protocol`, otherwise asserts and returns `nil`
+ */
+id _TBCAssertProtocolOrNil(Protocol * const protocol, id<NSObject> const object, char const * const expr);
+#define TBCAssertProtocolOrNil(protocolName, object) ((id<protocolName>)_TBCAssertProtocolOrNil(@protocol(protocolName), (object), #object))

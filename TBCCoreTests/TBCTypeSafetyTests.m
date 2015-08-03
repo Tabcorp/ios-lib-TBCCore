@@ -123,4 +123,26 @@
     XCTAssertNil(TBCAssertClassOrNil(TBCTypeSafetyTestClassA, nil), @"nil does not assert");
 }
 
+- (void)testAssertProtocol {
+    TBCTypeSafetyTestClassA *classA = [[TBCTypeSafetyTestClassA alloc] init];
+    TBCTypeSafetyTestClassDerivedFromA *derived = [[TBCTypeSafetyTestClassDerivedFromA alloc] init];
+
+    XCTAssertEqual(classA, TBCAssertProtocol(TBCTypeSafetyTestProtocolA, classA), @"ClassA ensures as conforming to ProtocolA");
+    XCTAssertThrowsSpecificNamed(TBCAssertProtocol(TBCTypeSafetyTestProtocolB, classA), NSException, NSInternalInconsistencyException, @"ClassA not assert as conforming to ProtocolB");
+    XCTAssertEqual(derived, TBCAssertProtocol(TBCTypeSafetyTestProtocolA, derived), @"ClassDerivedFromA assert as conforming to ProtocolA");
+    XCTAssertEqual(derived, TBCAssertProtocol(TBCTypeSafetyTestProtocolDerivedFromA, derived), @"ClassDerivedFromA assert as conforming to ProtocolDerivedFromA");
+    XCTAssertThrowsSpecificNamed(TBCAssertProtocol(TBCTypeSafetyTestProtocolA, nil), NSException, NSInternalInconsistencyException, @"nil asserts");
+}
+
+- (void)testAssertProtocolOrNil {
+    TBCTypeSafetyTestClassA *classA = [[TBCTypeSafetyTestClassA alloc] init];
+    TBCTypeSafetyTestClassDerivedFromA *derived = [[TBCTypeSafetyTestClassDerivedFromA alloc] init];
+
+    XCTAssertEqual(classA, TBCAssertProtocolOrNil(TBCTypeSafetyTestProtocolA, classA), @"ClassA ensures as conforming to ProtocolA");
+    XCTAssertThrowsSpecificNamed(TBCAssertProtocolOrNil(TBCTypeSafetyTestProtocolB, classA), NSException, NSInternalInconsistencyException, @"ClassA not assert as conforming to ProtocolB");
+    XCTAssertEqual(derived, TBCAssertProtocolOrNil(TBCTypeSafetyTestProtocolA, derived), @"ClassDerivedFromA assert as conforming to ProtocolA");
+    XCTAssertEqual(derived, TBCAssertProtocolOrNil(TBCTypeSafetyTestProtocolDerivedFromA, derived), @"ClassDerivedFromA assert as conforming to ProtocolDerivedFromA");
+    XCTAssertNil(TBCAssertProtocolOrNil(TBCTypeSafetyTestProtocolA, nil), @"nil does not assert");
+}
+
 @end
