@@ -29,6 +29,11 @@
     return alertView;
 }
 
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return [self initWithTitle:nil message:nil cancelButtonTitle:nil cancelButtonHandler:nil];
+}
+
 - (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle cancelButtonHandler:(dispatch_block_t)cancelButtonHandler {
     self = [super init];
     if (self) {
