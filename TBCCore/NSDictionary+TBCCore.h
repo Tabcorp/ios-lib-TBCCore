@@ -5,6 +5,8 @@
 #import <TBCCore/TBCCoreTypes.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSDictionary(TBCCore)
 
 - (NSDictionary *)tbc_map:(TBCCoreMapKeyAndObjectToObjectBlock)block;
@@ -18,3 +20,5 @@
 - (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
 
 @end
+
+NS_ASSUME_NONNULL_END

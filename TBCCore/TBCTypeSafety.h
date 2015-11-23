@@ -2,6 +2,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Ensure an object is an instance of a given class or an instance of any class that inherits from that class
 
@@ -10,10 +13,10 @@
 
  @return `object` if it is an instance of, or an instance of a class derived from `klass`, otherwise `nil`
  */
-id _TBCEnsureClass(const Class klass, id<NSObject> const object);
+id __nullable _TBCEnsureClass(const Class klass, id<NSObject> const __nullable object);
 #define TBCEnsureClass(type, object) ((type *)_TBCEnsureClass([type class], (object)))
 
-#define DECLARE_TBCEnsure(type) static inline type *TBCEnsure##type(id<NSObject> const object) {return TBCEnsureClass(type,object);};
+#define DECLARE_TBCEnsure(type) static inline type * __nullable TBCEnsure##type(id<NSObject> const __nullable object) {return TBCEnsureClass(type,object);};
 DECLARE_TBCEnsure(NSArray);
 DECLARE_TBCEnsure(NSDecimalNumber);
 DECLARE_TBCEnsure(NSDictionary);
@@ -28,7 +31,7 @@ DECLARE_TBCEnsure(NSString);
  
  @return `object` if it is a non-empty NSString, otherwise `nil`
  */
-NSString *TBCEnsureNSStringNotEmpty(id<NSObject> const object);
+NSString * __nullable TBCEnsureNSStringNotEmpty(id<NSObject> const __nullable object);
 
 /**
  Ensure an object is an instance of NSArray or an instance of any class that inherits from NSArray, and that it is not empty
@@ -37,7 +40,7 @@ NSString *TBCEnsureNSStringNotEmpty(id<NSObject> const object);
  
  @return `object` if it is a non-empty NSArray, otherwise `nil`
  */
-NSArray *TBCEnsureNSArrayNotEmpty(id<NSObject> const object);
+NSArray * __nullable TBCEnsureNSArrayNotEmpty(id<NSObject> const __nullable object);
 
 /**
  Ensure an object is not NSNull
@@ -46,7 +49,7 @@ NSArray *TBCEnsureNSArrayNotEmpty(id<NSObject> const object);
  
  @return `object` if it is not NSNull, otherwise `nil`
  */
-id _TBCEnsureNotNSNull(id<NSObject> const object);
+id __nullable _TBCEnsureNotNSNull(id<NSObject> const __nullable object);
 #define TBCEnsureNotNSNull(...) ((__typeof__(__VA_ARGS__))_TBCEnsureNotNSNull((id)(__VA_ARGS__)))
 
 /**
@@ -57,7 +60,7 @@ id _TBCEnsureNotNSNull(id<NSObject> const object);
  
  @return `object` if it conforms to `protocol`, otherwise `nil`
  */
-id _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const object);
+id __nullable _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const __nullable object);
 #define TBCEnsureProtocol(protocolName, object) ((id<protocolName>)_TBCEnsureProtocol(@protocol(protocolName), (object)))
 
 /**
@@ -68,10 +71,10 @@ id _TBCEnsureProtocol(Protocol * const protocol, id<NSObject> const object);
  
  @return `object` if it is an instance of, or an instance of a class derived from `klass`, otherwise asserts and returns `nil`
  */
-id _TBCAssertClass(const Class klass, id<NSObject> const object, char const * const expr);
-#define TBCAssertClass(type, object) ((type *)_TBCAssertClass([type class], (object), #object))
+id __nullable _TBCAssertClass(const Class klass, id<NSObject> const __nullable object, char const * const expr);
+#define TBCAssertClass(type, object) ((type * __nullable)_TBCAssertClass([type class], (object), #object))
 
-#define DECLARE_TBCAssert(type) static inline type *TBCAssert##type(id<NSObject> const object) {return TBCAssertClass(type,object);};
+#define DECLARE_TBCAssert(type) static inline type * __nullable TBCAssert##type(id<NSObject> const __nullable object) {return TBCAssertClass(type,object);};
 DECLARE_TBCAssert(NSArray);
 DECLARE_TBCAssert(NSDecimalNumber);
 DECLARE_TBCAssert(NSDictionary);
@@ -87,10 +90,10 @@ DECLARE_TBCAssert(NSString);
  
  @return `object` if it is nil, an instance of `klass`, or an instance of a class derived from `klass`; otherwise asserts and returns `nil`
  */
-id _TBCAssertClassOrNil(const Class klass, id<NSObject> const object, char const * const expr);
-#define TBCAssertClassOrNil(type, object) ((type *)_TBCAssertClassOrNil([type class], (object), #object))
+id __nullable _TBCAssertClassOrNil(const Class klass, id<NSObject> const __nullable object, char const * const expr);
+#define TBCAssertClassOrNil(type, object) ((type * __nullable)_TBCAssertClassOrNil([type class], (object), #object))
 
-#define DECLARE_TBCAssertOrNil(type) static inline type *TBCAssert##type##OrNil(id<NSObject> const object) {return TBCAssertClassOrNil(type,object);};
+#define DECLARE_TBCAssertOrNil(type) static inline type * __nullable TBCAssert##type##OrNil(id<NSObject> const __nullable object) {return TBCAssertClassOrNil(type,object);};
 DECLARE_TBCAssertOrNil(NSArray);
 DECLARE_TBCAssertOrNil(NSDecimalNumber);
 DECLARE_TBCAssertOrNil(NSDictionary);
@@ -106,8 +109,8 @@ DECLARE_TBCAssertOrNil(NSString);
 
  @return `object` if it conforms to `protocol`, otherwise asserts and returns `nil`
  */
-id _TBCAssertProtocol(Protocol * const protocol, id<NSObject> const object, char const * const expr);
-#define TBCAssertProtocol(protocolName, object) ((id<protocolName>)_TBCAssertProtocol(@protocol(protocolName), (object), #object))
+id __nullable _TBCAssertProtocol(Protocol * const protocol, id<NSObject> const __nullable object, char const * const expr);
+#define TBCAssertProtocol(protocolName, object) ((id<protocolName> __nullable)_TBCAssertProtocol(@protocol(protocolName), (object), #object))
 
 /**
  Assert an object is nil or conforms to a given protocol
@@ -117,5 +120,7 @@ id _TBCAssertProtocol(Protocol * const protocol, id<NSObject> const object, char
 
  @return `object` if it is nil or conforms to `protocol`, otherwise asserts and returns `nil`
  */
-id _TBCAssertProtocolOrNil(Protocol * const protocol, id<NSObject> const object, char const * const expr);
-#define TBCAssertProtocolOrNil(protocolName, object) ((id<protocolName>)_TBCAssertProtocolOrNil(@protocol(protocolName), (object), #object))
+id __nullable _TBCAssertProtocolOrNil(Protocol * const protocol, id<NSObject> const __nullable object, char const * const expr);
+#define TBCAssertProtocolOrNil(protocolName, object) ((id<protocolName> __nullable)_TBCAssertProtocolOrNil(@protocol(protocolName), (object), #object))
+
+NS_ASSUME_NONNULL_END

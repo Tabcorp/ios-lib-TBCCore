@@ -3,7 +3,7 @@
 #import <Foundation/Foundation.h>
 
 
-static inline BOOL TBCObjectsAreDifferent(id<NSObject> a, id<NSObject> b) {
+static inline BOOL TBCObjectsAreDifferent(id<NSObject> __nullable a, id<NSObject> __nullable b) {
     if (a == b) {
         return NO;
     }

@@ -5,6 +5,8 @@
 #import <TBCCore/TBCCoreTypes.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSSet(TBCCore)
 
 - (NSSet *)tbc_map:(TBCCoreMapObjectToObjectBlock)block;
@@ -23,7 +25,9 @@
 - (NSArray *)tbc_arrayByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
 - (NSMutableArray *)tbc_mutableArrayByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
 
-- (id)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicateBlock concurrent:(BOOL)concurrent;
-- (id)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicateBlock;
+- (id __nullable)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicateBlock concurrent:(BOOL)concurrent;
+- (id __nullable)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicateBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

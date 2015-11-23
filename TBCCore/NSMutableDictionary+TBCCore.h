@@ -3,12 +3,14 @@
 #import <Foundation/Foundation.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSMutableDictionary(TBCCore)
 
-- (id)tbc_extractObjectForKey:(id)aKey;
-- (id)tbc_extractObjectIfExistsForKey:(id)aKey;
-- (id)tbc_extractObjectForKey:(id)aKey withTransformationBlock:(id(^)(id object))block;
-- (id)tbc_extractObjectIfExistsForKey:(id)aKey withTransformationBlock:(id(^)(id object))block;
+- (id __nullable)tbc_extractObjectForKey:(id)aKey;
+- (id __nullable)tbc_extractObjectIfExistsForKey:(id)aKey;
+- (id __nullable)tbc_extractObjectForKey:(id)aKey withTransformationBlock:(id(^__nullable)(id object))block;
+- (id __nullable)tbc_extractObjectIfExistsForKey:(id)aKey withTransformationBlock:(id(^__nullable)(id object))block;
 
 /**
  *  Removes and returns the value associated with a given key, optionally transformed by a given block.
@@ -23,18 +25,19 @@
  *                     The block should return nil to indicate there was an error transforming the value (for example, if a string date didn't conform to an expected format).
  *                     The block will not be called if there is no value (or NSNull).
  */
-- (id)tbc_extractObjectForKey:(id)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(id(^)(id object))block;
+- (id __nullable)tbc_extractObjectForKey:(id)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(id(^__nullable)(id object))block;
 
 - (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
 - (NSInteger)tbc_extractIntegerForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
 - (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey;
 - (NSInteger)tbc_extractIntegerForKey:(id)aKey;
 
-- (NSString *)tbc_extractStringForKey:(id)aKey;
-- (NSString *)tbc_extractStringIfExistsForKey:(id)aKey;
+- (NSString * __nullable)tbc_extractStringForKey:(id)aKey;
+- (NSString * __nullable)tbc_extractStringIfExistsForKey:(id)aKey;
 
-- (NSNumber *)tbc_extractNumberForKey:(id)aKey;
-- (NSNumber *)tbc_extractNumberIfExistsForKey:(id)aKey;
-
+- (NSNumber * __nullable)tbc_extractNumberForKey:(id)aKey;
+- (NSNumber * __nullable)tbc_extractNumberIfExistsForKey:(id)aKey;
 
 @end
+
+NS_ASSUME_NONNULL_END

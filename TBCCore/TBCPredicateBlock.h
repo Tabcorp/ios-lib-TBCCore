@@ -2,8 +2,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TBCCoreTypes.h"
+#import <TBCCore/TBCCoreTypes.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
 
 extern TBCObjectPredicateBlock _TBCObjectIsKindOfClass(const Class klass);
 #define TBCObjectIsKindOfClass(type) (_TBCObjectIsKindOfClass([type class]))
@@ -24,3 +26,5 @@ DECLARE_TBCObjectPredicate(NSString);
 
 extern const TBCObjectPredicateBlock TBCObjectIsNSStringNotEmpty;
 extern const TBCObjectPredicateBlock TBCObjectIsNotNSNull;
+
+NS_ASSUME_NONNULL_END
