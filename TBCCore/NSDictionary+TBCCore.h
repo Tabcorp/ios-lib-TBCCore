@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TBCCoreTypes.h"
+#import <TBCCore/TBCCoreTypes.h>
 
 
 @interface NSDictionary(TBCCore)

@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TBCCoreTypes.h"
+#import <TBCCore/TBCCoreTypes.h>
 
 
 @interface NSSet(TBCCore)
