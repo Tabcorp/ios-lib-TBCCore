@@ -2,15 +2,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import <TBCCore/TBCCoreTypes.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSMutableDictionary(TBCCore)
+@interface NSMutableDictionary<KeyType, ObjectType> (TBCCore)
 
-- (id __nullable)tbc_extractObjectForKey:(id)aKey;
-- (id __nullable)tbc_extractObjectIfExistsForKey:(id)aKey;
-- (id __nullable)tbc_extractObjectForKey:(id)aKey withTransformationBlock:(id(^__nullable)(id object))block;
-- (id __nullable)tbc_extractObjectIfExistsForKey:(id)aKey withTransformationBlock:(id(^__nullable)(id object))block;
+- (ObjectType __nullable)tbc_extractObjectForKey:(KeyType)aKey;
+- (ObjectType __nullable)tbc_extractObjectIfExistsForKey:(KeyType)aKey;
+- (id __nullable)tbc_extractObjectForKey:(KeyType)aKey withTransformationBlock:(id(^__nullable)(ObjectType object))block;
+- (id __nullable)tbc_extractObjectIfExistsForKey:(KeyType)aKey withTransformationBlock:(id(^__nullable)(ObjectType object))block;
 
 /**
  *  Removes and returns the value associated with a given key, optionally transformed by a given block.
@@ -25,18 +27,18 @@ NS_ASSUME_NONNULL_BEGIN
  *                     The block should return nil to indicate there was an error transforming the value (for example, if a string date didn't conform to an expected format).
  *                     The block will not be called if there is no value (or NSNull).
  */
-- (id __nullable)tbc_extractObjectForKey:(id)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(id(^__nullable)(id object))block;
+- (id __nullable)tbc_extractObjectForKey:(KeyType)aKey expectingValue:(BOOL)expectValue withTransformationBlock:(id(^__nullable)(ObjectType object))block;
 
-- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
-- (NSInteger)tbc_extractIntegerForKey:(id)aKey withTransformationBlock:(NSInteger(^)(id object))block;
-- (NSInteger)tbc_extractIntegerIfExistsForKey:(id)aKey;
-- (NSInteger)tbc_extractIntegerForKey:(id)aKey;
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(KeyType)aKey withTransformationBlock:(NSInteger(^__nullable)(ObjectType object))block;
+- (NSInteger)tbc_extractIntegerForKey:(KeyType)aKey withTransformationBlock:(NSInteger(^__nullable)(ObjectType object))block;
+- (NSInteger)tbc_extractIntegerIfExistsForKey:(KeyType)aKey;
+- (NSInteger)tbc_extractIntegerForKey:(KeyType)aKey;
 
-- (NSString * __nullable)tbc_extractStringForKey:(id)aKey;
-- (NSString * __nullable)tbc_extractStringIfExistsForKey:(id)aKey;
+- (NSString * __nullable)tbc_extractStringForKey:(KeyType)aKey;
+- (NSString * __nullable)tbc_extractStringIfExistsForKey:(KeyType)aKey;
 
-- (NSNumber * __nullable)tbc_extractNumberForKey:(id)aKey;
-- (NSNumber * __nullable)tbc_extractNumberIfExistsForKey:(id)aKey;
+- (NSNumber * __nullable)tbc_extractNumberForKey:(KeyType)aKey;
+- (NSNumber * __nullable)tbc_extractNumberIfExistsForKey:(KeyType)aKey;
 
 @end
 

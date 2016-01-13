@@ -7,9 +7,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSMapTable (TBCCore)
+@interface NSMapTable<KeyType, ObjectType> (TBCCore)
 
-- (void)tbc_setObjectsFromArray:(NSArray *)array forKeysGeneratedByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
+- (void)tbc_setObjectsFromArray:(NSArray *)array forKeysGeneratedByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(id, KeyType))block;
 
 @end
 

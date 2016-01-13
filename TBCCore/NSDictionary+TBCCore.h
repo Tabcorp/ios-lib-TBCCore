@@ -7,17 +7,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary(TBCCore)
+@interface NSDictionary<__covariant KeyType, __covariant ObjectType> (TBCCore)
 
-- (NSDictionary *)tbc_map:(TBCCoreMapKeyAndObjectToObjectBlock)block;
+- (NSDictionary *)tbc_map:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
 
-- (NSDictionary *)tbc_dictionaryByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSMutableDictionary *)tbc_mutableDictionaryByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
-- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapKeyAndObjectToObjectBlock)block;
+- (NSDictionary *)tbc_dictionaryByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSMutableDictionary *)tbc_mutableDictionaryByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSSet *)tbc_setByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
+- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreGenericMapKeyAndObjectToObjectBlock(KeyType, ObjectType, id))block;
 
 @end
 

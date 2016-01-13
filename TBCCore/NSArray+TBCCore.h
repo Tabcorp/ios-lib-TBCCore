@@ -7,40 +7,40 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSArray(TBCCore)
+@interface NSArray<__covariant ObjectType> (TBCCore)
 
-- (NSArray *)tbc_map:(TBCCoreMapObjectToObjectBlock)block;
-- (NSArray *)tbc_mapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
-- (NSArray *)tbc_flatMap:(TBCCoreMapObjectToArrayBlock)block;
+- (NSArray *)tbc_map:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSArray *)tbc_mapWithIndex:(TBCCoreGenericMapObjectAndIndexToObjectBlock(ObjectType, id))block;
+- (NSArray *)tbc_flatMap:(TBCCoreGenericMapObjectToArrayBlock(ObjectType))block;
 
-- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSArray *)tbc_arrayByApplyingMapWithIndex:(TBCCoreMapObjectAndIndexToObjectBlock)block;
-- (NSArray *)tbc_arrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block;
-- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSMutableArray *)tbc_mutableArrayByApplyingFlatMap:(TBCCoreMapObjectToArrayBlock)block;
-- (NSSet *)tbc_setByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSOrderedSet *)tbc_orderedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSMutableOrderedSet *)tbc_mutableOrderedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreMapObjectToObjectBlock)block;
-- (NSMutableIndexSet *)tbc_mutableIndexSetByApplyingMap:(TBCCoreMapObjectToNSUIntegerBlock)block;
+- (NSArray *)tbc_arrayByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSArray *)tbc_arrayByApplyingMapWithIndex:(TBCCoreGenericMapObjectAndIndexToObjectBlock(ObjectType, id))block;
+- (NSArray *)tbc_arrayByApplyingFlatMap:(TBCCoreGenericMapObjectToArrayBlock(ObjectType))block;
+- (NSMutableArray *)tbc_mutableArrayByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSMutableArray *)tbc_mutableArrayByApplyingFlatMap:(TBCCoreGenericMapObjectToArrayBlock(ObjectType))block;
+- (NSSet *)tbc_setByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSMutableSet *)tbc_mutableSetByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSOrderedSet *)tbc_orderedSetByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSMutableOrderedSet *)tbc_mutableOrderedSetByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSCountedSet *)tbc_countedSetByApplyingMap:(TBCCoreGenericMapObjectToObjectBlock(ObjectType, id))block;
+- (NSMutableIndexSet *)tbc_mutableIndexSetByApplyingMap:(TBCCoreGenericMapObjectToNSUIntegerBlock(ObjectType))block;
 
-- (NSArray *)tbc_filter:(TBCObjectPredicateBlock)predicateBlock;
+- (NSArray<ObjectType> *)tbc_filter:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
 
-- (NSArray *)tbc_arrayByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSMutableArray *)tbc_mutableArrayByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSSet *)tbc_setByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSMutableSet *)tbc_mutableSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSOrderedSet *)tbc_orderedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSMutableOrderedSet *)tbc_mutableOrderedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
-- (NSCountedSet *)tbc_countedSetByFilteringWithPredicateBlock:(TBCObjectPredicateBlock)predicateBlock;
+- (NSArray<ObjectType> *)tbc_arrayByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSMutableArray<ObjectType> *)tbc_mutableArrayByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSSet<ObjectType> *)tbc_setByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSMutableSet<ObjectType> *)tbc_mutableSetByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSOrderedSet<ObjectType> *)tbc_orderedSetByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSMutableOrderedSet<ObjectType> *)tbc_mutableOrderedSetByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
+- (NSCountedSet<ObjectType> *)tbc_countedSetByFilteringWithPredicateBlock:(TBCGenericObjectPredicateBlock(ObjectType))predicateBlock;
 
-- (id __nullable)tbc_firstElementMatching:(TBCObjectPredicateBlock)predicate;
-- (NSUInteger)tbc_indexOfFirstElementMatching:(TBCObjectPredicateBlock)predicate;
-- (id __nullable)tbc_anyElementMatching:(TBCObjectPredicateBlock)predicate;
-- (NSUInteger)tbc_indexOfAnyElementMatching:(TBCObjectPredicateBlock)predicate;
+- (ObjectType __nullable)tbc_firstElementMatching:(TBCGenericObjectPredicateBlock(ObjectType))predicate;
+- (NSUInteger)tbc_indexOfFirstElementMatching:(TBCGenericObjectPredicateBlock(ObjectType))predicate;
+- (ObjectType __nullable)tbc_anyElementMatching:(TBCGenericObjectPredicateBlock(ObjectType))predicate;
+- (NSUInteger)tbc_indexOfAnyElementMatching:(TBCGenericObjectPredicateBlock(ObjectType))predicate;
 
-- (NSArray *)tbc_arrayByRemovingDuplicatesWithEqualityBlock:(TBCObjectObjectPredicateBlock)equalityBlock;
+- (NSArray<ObjectType> *)tbc_arrayByRemovingDuplicatesWithEqualityBlock:(TBCGenericObjectObjectPredicateBlock(ObjectType))equalityBlock;
 
 @end
 
