@@ -8,7 +8,30 @@
 #import "TBCTypeSafety.h"
 
 
+static NSString * const TBCMonetaryValueDefaultBehaviorThreadDictionaryKey = @"TBCMonetaryValue.defaultBehavior";
+
+
 @implementation TBCMonetaryValue
+
++ (id<NSDecimalNumberBehaviors>)defaultBehavior {
+    NSThread * const thread = NSThread.currentThread;
+    NSMutableDictionary * const threadDictionary = thread.threadDictionary;
+    id<NSDecimalNumberBehaviors> behavior = threadDictionary[TBCMonetaryValueDefaultBehaviorThreadDictionaryKey];
+    if (!behavior) {
+        behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:NSDecimalNoScale raiseOnExactness:NO raiseOnOverflow:YES raiseOnUnderflow:YES raiseOnDivideByZero:YES];
+        threadDictionary[TBCMonetaryValueDefaultBehaviorThreadDictionaryKey] = behavior;
+    }
+    return behavior;
+}
++ (void)setDefaultBehavior:(id<NSDecimalNumberBehaviors>)behavior {
+    NSThread * const thread = NSThread.currentThread;
+    NSMutableDictionary * const threadDictionary = thread.threadDictionary;
+    if (behavior) {
+        threadDictionary[TBCMonetaryValueDefaultBehaviorThreadDictionaryKey] = behavior;
+    } else {
+        [threadDictionary removeObjectForKey:TBCMonetaryValueDefaultBehaviorThreadDictionaryKey];
+    }
+}
 
 + (instancetype)monetaryValueWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount {
     return [[self alloc] initWithUnspecifiedCurrencyCodeAndAmount:amount];
@@ -61,7 +84,7 @@
 }
 
 - (TBCMonetaryValue *)monetaryValueByAdding:(TBCMonetaryValue *)value {
-    return [self monetaryValueByAdding:value withBehavior:NSDecimalNumber.defaultBehavior];
+    return [self monetaryValueByAdding:value withBehavior:self.class.defaultBehavior];
 }
 - (TBCMonetaryValue *)monetaryValueByAdding:(TBCMonetaryValue *)value withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
     if (!value) {
@@ -75,7 +98,7 @@
 }
 
 - (TBCMonetaryValue *)monetaryValueBySubtracting:(TBCMonetaryValue *)value {
-    return [self monetaryValueBySubtracting:value withBehavior:NSDecimalNumber.defaultBehavior];
+    return [self monetaryValueBySubtracting:value withBehavior:self.class.defaultBehavior];
 }
 - (TBCMonetaryValue *)monetaryValueBySubtracting:(TBCMonetaryValue *)value withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
     if (!value) {
@@ -89,7 +112,7 @@
 }
 
 - (TBCMonetaryValue *)monetaryValueByMultiplyingBy:(NSDecimalNumber *)multiplier {
-    return [self monetaryValueByMultiplyingBy:multiplier withBehavior:NSDecimalNumber.defaultBehavior];
+    return [self monetaryValueByMultiplyingBy:multiplier withBehavior:self.class.defaultBehavior];
 }
 - (TBCMonetaryValue *)monetaryValueByMultiplyingBy:(NSDecimalNumber *)multiplier withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
     NSDecimalNumber * const amount = [_amount decimalNumberByMultiplyingBy:multiplier withBehavior:behavior];
@@ -97,7 +120,7 @@
 }
 
 - (TBCMonetaryValue *)monetaryValueByDividingBy:(NSDecimalNumber *)divisor {
-    return [self monetaryValueByDividingBy:divisor withBehavior:NSDecimalNumber.defaultBehavior];
+    return [self monetaryValueByDividingBy:divisor withBehavior:self.class.defaultBehavior];
 }
 - (TBCMonetaryValue *)monetaryValueByDividingBy:(NSDecimalNumber *)divisor withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
     NSDecimalNumber * const amount = [_amount decimalNumberByDividingBy:divisor withBehavior:behavior];

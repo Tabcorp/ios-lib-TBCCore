@@ -7,6 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TBCMonetaryValue : NSObject<NSCopying>
 
++ (id<NSDecimalNumberBehaviors>)defaultBehavior;
++ (void)setDefaultBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior;
+
 + (instancetype)monetaryValueWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount;
 - (instancetype)initWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount;
 
