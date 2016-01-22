@@ -60,4 +60,53 @@
     return [NSString stringWithFormat:@"<%@:%p %@ %@>", NSStringFromClass(self.class), self, _currencyCode ?: @"???", _amount];
 }
 
+- (TBCMonetaryValue *)monetaryValueByAdding:(TBCMonetaryValue *)value {
+    return [self monetaryValueByAdding:value withBehavior:NSDecimalNumber.defaultBehavior];
+}
+- (TBCMonetaryValue *)monetaryValueByAdding:(TBCMonetaryValue *)value withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    if (!value) {
+        return self.copy;
+    }
+    if (_currencyCode && value.currencyCode) {
+        NSAssert((!TBCObjectsAreDifferent(_currencyCode, value.currencyCode)), @"");
+    }
+    NSDecimalNumber * const amount = [_amount decimalNumberByAdding:value.amount withBehavior:behavior];
+    return [[TBCMonetaryValue alloc] initWithCurrencyCode:_currencyCode ?: value.currencyCode amount:amount];
+}
+
+- (TBCMonetaryValue *)monetaryValueBySubtracting:(TBCMonetaryValue *)value {
+    return [self monetaryValueBySubtracting:value withBehavior:NSDecimalNumber.defaultBehavior];
+}
+- (TBCMonetaryValue *)monetaryValueBySubtracting:(TBCMonetaryValue *)value withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    if (!value) {
+        return self.copy;
+    }
+    if (_currencyCode && value.currencyCode) {
+        NSAssert((!TBCObjectsAreDifferent(_currencyCode, value.currencyCode)), @"");
+    }
+    NSDecimalNumber * const amount = [_amount decimalNumberBySubtracting:value.amount withBehavior:behavior];
+    return [[TBCMonetaryValue alloc] initWithCurrencyCode:_currencyCode ?: value.currencyCode amount:amount];
+}
+
+- (TBCMonetaryValue *)monetaryValueByMultiplyingBy:(NSDecimalNumber *)multiplier {
+    return [self monetaryValueByMultiplyingBy:multiplier withBehavior:NSDecimalNumber.defaultBehavior];
+}
+- (TBCMonetaryValue *)monetaryValueByMultiplyingBy:(NSDecimalNumber *)multiplier withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const amount = [_amount decimalNumberByMultiplyingBy:multiplier withBehavior:behavior];
+    return [[TBCMonetaryValue alloc] initWithCurrencyCode:_currencyCode amount:amount];
+}
+
+- (TBCMonetaryValue *)monetaryValueByDividingBy:(NSDecimalNumber *)divisor {
+    return [self monetaryValueByDividingBy:divisor withBehavior:NSDecimalNumber.defaultBehavior];
+}
+- (TBCMonetaryValue *)monetaryValueByDividingBy:(NSDecimalNumber *)divisor withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const amount = [_amount decimalNumberByDividingBy:divisor withBehavior:behavior];
+    return [[TBCMonetaryValue alloc] initWithCurrencyCode:_currencyCode amount:amount];
+}
+
+- (TBCMonetaryValue *)monetaryValueByRoundingAccordingToBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const amount = [_amount decimalNumberByRoundingAccordingToBehavior:behavior];
+    return [[TBCMonetaryValue alloc] initWithCurrencyCode:_currencyCode amount:amount];
+}
+
 @end

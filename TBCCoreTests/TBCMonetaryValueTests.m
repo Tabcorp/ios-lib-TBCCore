@@ -47,4 +47,207 @@
     XCTAssertEqualObjects(v6, v7);
 }
 
+- (void)testAddition {
+    NSDecimalNumber * const two = [NSDecimalNumber decimalNumberWithString:@"2"];
+
+    TBCMonetaryValue * const unspecifiedZero = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.zero];
+    TBCMonetaryValue * const unspecifiedOne = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.one];
+    TBCMonetaryValue * const unspecifiedTwo = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:two];
+
+    TBCMonetaryValue * const audOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:NSDecimalNumber.one];
+    TBCMonetaryValue * const audOnePointFive = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:[NSDecimalNumber decimalNumberWithString:@"1.5" locale:nil]];
+
+    TBCMonetaryValue * const usdOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"USD" amount:NSDecimalNumber.one];
+
+    {
+        TBCMonetaryValue * const r = [unspecifiedZero monetaryValueByAdding:unspecifiedZero];
+        XCTAssertEqualObjects(r, unspecifiedZero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedZero monetaryValueByAdding:unspecifiedOne];
+        XCTAssertEqualObjects(r, unspecifiedOne);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueByAdding:unspecifiedOne];
+        XCTAssertNil(r.currencyCode);
+        XCTAssertEqualObjects(r.amount, two);
+        XCTAssertEqualObjects(unspecifiedTwo, r);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedZero monetaryValueByAdding:audOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, NSDecimalNumber.one);
+        XCTAssertEqualObjects(r, audOne);
+    }
+    {
+        TBCMonetaryValue * const r = [[unspecifiedZero monetaryValueByAdding:audOne] monetaryValueByAdding:unspecifiedOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, two);
+    }
+    {
+        TBCMonetaryValue * const r = [[unspecifiedZero monetaryValueByAdding:audOne] monetaryValueByAdding:audOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, two);
+    }
+    {
+        XCTAssertThrows([audOne monetaryValueByAdding:usdOne]);
+    }
+    {
+        NSDecimalNumberHandler * const behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [unspecifiedZero monetaryValueByAdding:audOnePointFive withBehavior:behavior];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, NSDecimalNumber.one);
+        XCTAssertEqualObjects(r, audOne);
+    }
+}
+
+- (void)testSubtraction {
+    NSDecimalNumber * const two = [NSDecimalNumber decimalNumberWithString:@"2"];
+
+    TBCMonetaryValue * const unspecifiedZero = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.zero];
+    TBCMonetaryValue * const unspecifiedOne = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.one];
+    TBCMonetaryValue * const unspecifiedTwo = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:two];
+
+    TBCMonetaryValue * const audOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:NSDecimalNumber.one];
+    TBCMonetaryValue * const usdOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"USD" amount:NSDecimalNumber.one];
+
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueBySubtracting:unspecifiedZero];
+        XCTAssertEqualObjects(r, unspecifiedOne);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueBySubtracting:unspecifiedOne];
+        XCTAssertEqualObjects(r, unspecifiedZero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedTwo monetaryValueBySubtracting:unspecifiedOne];
+        XCTAssertEqualObjects(r, unspecifiedOne);
+    }
+    {
+        TBCMonetaryValue * const r = [[unspecifiedTwo monetaryValueBySubtracting:unspecifiedOne] monetaryValueBySubtracting:unspecifiedOne];
+        XCTAssertEqualObjects(r, unspecifiedZero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueBySubtracting:audOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, NSDecimalNumber.zero);
+    }
+    {
+        TBCMonetaryValue * const r = [[unspecifiedTwo monetaryValueBySubtracting:audOne] monetaryValueBySubtracting:unspecifiedOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, NSDecimalNumber.zero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedTwo monetaryValueBySubtracting:audOne];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, NSDecimalNumber.one);
+        XCTAssertEqualObjects(r, audOne);
+    }
+    {
+        XCTAssertThrows([audOne monetaryValueBySubtracting:usdOne]);
+    }
+}
+
+- (void)testMultiplication {
+    NSDecimalNumber * const oneOverSix = [NSDecimalNumber.one decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6" locale:nil]];
+    NSDecimalNumber * const two = [NSDecimalNumber decimalNumberWithString:@"2"];
+
+    TBCMonetaryValue * const unspecifiedZero = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.zero];
+    TBCMonetaryValue * const unspecifiedOne = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.one];
+
+    TBCMonetaryValue * const audOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:NSDecimalNumber.one];
+
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueByMultiplyingBy:NSDecimalNumber.zero];
+        XCTAssertEqualObjects(r, unspecifiedZero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueByMultiplyingBy:NSDecimalNumber.one];
+        XCTAssertEqualObjects(r, unspecifiedOne);
+    }
+    {
+        TBCMonetaryValue * const r = [audOne monetaryValueByMultiplyingBy:two];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, two);
+    }
+    {
+        TBCMonetaryValue * const r = [audOne monetaryValueByMultiplyingBy:oneOverSix];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, oneOverSix);
+    }
+    {
+        NSDecimalNumberHandler * const roundDownTo2dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:2 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOne monetaryValueByMultiplyingBy:oneOverSix withBehavior:roundDownTo2dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".16" locale:nil]);
+    }
+    {
+        NSDecimalNumberHandler * const roundDownTo4dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:4 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOne monetaryValueByMultiplyingBy:oneOverSix withBehavior:roundDownTo4dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".1666" locale:nil]);
+    }
+}
+
+- (void)testDivision {
+    NSDecimalNumber * const oneOverSix = [NSDecimalNumber.one decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6" locale:nil]];
+    NSDecimalNumber * const two = [NSDecimalNumber decimalNumberWithString:@"2"];
+    NSDecimalNumber * const six = [NSDecimalNumber decimalNumberWithString:@"6"];
+
+    TBCMonetaryValue * const unspecifiedZero = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.zero];
+    TBCMonetaryValue * const unspecifiedOne = [TBCMonetaryValue monetaryValueWithUnspecifiedCurrencyCodeAndAmount:NSDecimalNumber.one];
+
+    TBCMonetaryValue * const audOne = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:NSDecimalNumber.one];
+
+    {
+        TBCMonetaryValue * const r = [unspecifiedZero monetaryValueByDividingBy:NSDecimalNumber.one];
+        XCTAssertEqualObjects(r, unspecifiedZero);
+    }
+    {
+        TBCMonetaryValue * const r = [unspecifiedOne monetaryValueByDividingBy:NSDecimalNumber.one];
+        XCTAssertEqualObjects(r, unspecifiedOne);
+    }
+    {
+        TBCMonetaryValue * const r = [audOne monetaryValueByDividingBy:two];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".5" locale:nil]);
+    }
+    {
+        TBCMonetaryValue * const r = [audOne monetaryValueByDividingBy:six];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, oneOverSix);
+    }
+    {
+        NSDecimalNumberHandler * const roundDownTo2dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:2 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOne monetaryValueByDividingBy:six withBehavior:roundDownTo2dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".16" locale:nil]);
+    }
+    {
+        NSDecimalNumberHandler * const roundDownTo4dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:4 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOne monetaryValueByDividingBy:six withBehavior:roundDownTo4dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".1666" locale:nil]);
+    }
+}
+
+- (void)testRounding {
+    NSDecimalNumber * const oneOverSix = [NSDecimalNumber.one decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6" locale:nil]];
+
+    TBCMonetaryValue * const audOneOverSix = [TBCMonetaryValue monetaryValueWithCurrencyCode:@"AUD" amount:oneOverSix];
+
+    {
+        NSDecimalNumberHandler * const roundDownTo2dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:2 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOneOverSix monetaryValueByRoundingAccordingToBehavior:roundDownTo2dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".16" locale:nil]);
+    }
+    {
+        NSDecimalNumberHandler * const roundDownTo4dp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:4 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+        TBCMonetaryValue * const r = [audOneOverSix monetaryValueByRoundingAccordingToBehavior:roundDownTo4dp];
+        XCTAssertEqualObjects(r.currencyCode, @"AUD");
+        XCTAssertEqualObjects(r.amount, [NSDecimalNumber decimalNumberWithString:@".1666" locale:nil]);
+    }
+}
+
 @end
