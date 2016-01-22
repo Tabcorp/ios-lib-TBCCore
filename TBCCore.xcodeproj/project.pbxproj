@@ -82,6 +82,11 @@
 		FD4936E0199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */; };
 		FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */; };
 		FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4A893219B548D100D070E2 /* TBCActionSheet.h */; };
+		FD4AA4F51C50B0540038B9A0 /* TBCMonetaryValue.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4AA4F31C50B0540038B9A0 /* TBCMonetaryValue.h */; };
+		FD4AA4F61C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */; };
+		FD4AA4F71C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */; };
+		FD4AA4FB1C51B6110038B9A0 /* TBCMonetaryValueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4AA4FA1C51B6110038B9A0 /* TBCMonetaryValueTests.m */; };
+		FD4AA4FC1C51B6110038B9A0 /* TBCMonetaryValueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4AA4FA1C51B6110038B9A0 /* TBCMonetaryValueTests.m */; };
 		FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */; };
 		FD56C8B719C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
 		FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */; };
@@ -205,6 +210,9 @@
 		FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDelayedDispatcherTests.m; sourceTree = "<group>"; };
 		FD4A893219B548D100D070E2 /* TBCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCActionSheet.h; sourceTree = "<group>"; };
 		FD4A893319B548D100D070E2 /* TBCActionSheet-ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBCActionSheet-ios.m"; sourceTree = "<group>"; };
+		FD4AA4F31C50B0540038B9A0 /* TBCMonetaryValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCMonetaryValue.h; sourceTree = "<group>"; };
+		FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCMonetaryValue.m; sourceTree = "<group>"; };
+		FD4AA4FA1C51B6110038B9A0 /* TBCMonetaryValueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCMonetaryValueTests.m; sourceTree = "<group>"; };
 		FD56C8B419C7FD04008E9B11 /* TBCPersistenceURLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCPersistenceURLProvider.h; sourceTree = "<group>"; };
 		FD56C8B519C7FD04008E9B11 /* TBCPersistenceURLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPersistenceURLProvider.m; sourceTree = "<group>"; };
 		FDA926831ADE174600C1BEE0 /* NSMapTable+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+TBCCore.h"; sourceTree = "<group>"; };
@@ -343,6 +351,8 @@
 				FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */,
 				A30AF177199B53F000E2E356 /* TBCDispatch.h */,
 				A30AF178199B53F000E2E356 /* TBCDispatch.m */,
+				FD4AA4F31C50B0540038B9A0 /* TBCMonetaryValue.h */,
+				FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */,
 				A3C9ABC91A688838002323ED /* TBCStopwatch.h */,
 				A3C9ABCA1A688838002323ED /* TBCStopwatch.m */,
 				FD4936B91999BAB40079A886 /* TBCObjC.h */,
@@ -368,6 +378,7 @@
 				D409CF851AB119FE009D214A /* NSMutableDictionary+TBCCoreTests.m */,
 				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
 				A30AF17C199B58ED00E2E356 /* TBCDispatchTests.m */,
+				FD4AA4FA1C51B6110038B9A0 /* TBCMonetaryValueTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				A30AF17F199B88F500E2E356 /* TBCTimerTests.m */,
 				A377E0D319925131007F2F47 /* TBCTypeSafetyTests.m */,
@@ -449,6 +460,7 @@
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */,
+				FD4AA4F51C50B0540038B9A0 /* TBCMonetaryValue.h in Headers */,
 				A3017FCE1A84663D0055A22A /* NSMutableDictionary+TBCCore.h in Headers */,
 				FD56C8B619C7FD04008E9B11 /* TBCPersistenceURLProvider.h in Headers */,
 				A32272EA1ADF873A00CBF58F /* NSDictionary+TBCCore.h in Headers */,
@@ -673,6 +685,7 @@
 				A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */,
 				A32272EB1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
+				FD4AA4F61C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */,
 				FDFFE7AA1ACCDB3F00F8B782 /* NSString+TBCCore.m in Sources */,
 				A38B6CB81A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */,
 				A3C9ABCC1A688838002323ED /* TBCStopwatch.m in Sources */,
@@ -691,6 +704,7 @@
 			files = (
 				FD4936DF199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */,
 				A377E0D419925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
+				FD4AA4FB1C51B6110038B9A0 /* TBCMonetaryValueTests.m in Sources */,
 				D409CF861AB119FE009D214A /* NSMutableDictionary+TBCCoreTests.m in Sources */,
 				FD4936BF1999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17D199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
@@ -703,6 +717,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4AA4F71C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */,
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
@@ -728,6 +743,7 @@
 			files = (
 				FD4936E0199AE3920079A886 /* TBCDelayedDispatcherTests.m in Sources */,
 				A377E0D519925131007F2F47 /* TBCTypeSafetyTests.m in Sources */,
+				FD4AA4FC1C51B6110038B9A0 /* TBCMonetaryValueTests.m in Sources */,
 				D409CF871AB119FE009D214A /* NSMutableDictionary+TBCCoreTests.m in Sources */,
 				FD4936C01999CEB80079A886 /* TBCObjCTests.m in Sources */,
 				A30AF17E199B58ED00E2E356 /* TBCDispatchTests.m in Sources */,
