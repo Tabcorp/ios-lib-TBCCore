@@ -55,6 +55,9 @@
 		A3C9ABCB1A688838002323ED /* TBCStopwatch.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C9ABC91A688838002323ED /* TBCStopwatch.h */; };
 		A3C9ABCC1A688838002323ED /* TBCStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C9ABCA1A688838002323ED /* TBCStopwatch.m */; };
 		A3C9ABCD1A688838002323ED /* TBCStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C9ABCA1A688838002323ED /* TBCStopwatch.m */; };
+		A3DA9C281C7ADDDC00CA0F09 /* TBCCancellable.h in Headers */ = {isa = PBXBuildFile; fileRef = A3DA9C261C7ADDDC00CA0F09 /* TBCCancellable.h */; };
+		A3DA9C291C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DA9C271C7ADDDC00CA0F09 /* TBCCancellable.m */; };
+		A3DA9C2A1C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DA9C271C7ADDDC00CA0F09 /* TBCCancellable.m */; };
 		A3DBD4A01987E68C00EDCAD2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F7D1987E2EB00C30AFA /* XCTest.framework */; };
 		A3DBD4A41987E68C00EDCAD2 /* libTBCCore-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DBD48E1987E68B00EDCAD2 /* libTBCCore-mac.a */; };
 		A3DBD4B51987E9EC00EDCAD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3084F6F1987E2EB00C30AFA /* Foundation.framework */; };
@@ -188,6 +191,8 @@
 		A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCoreExampleViewController.m; sourceTree = "<group>"; };
 		A3C9ABC91A688838002323ED /* TBCStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCStopwatch.h; sourceTree = "<group>"; };
 		A3C9ABCA1A688838002323ED /* TBCStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCStopwatch.m; sourceTree = "<group>"; };
+		A3DA9C261C7ADDDC00CA0F09 /* TBCCancellable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCCancellable.h; sourceTree = "<group>"; };
+		A3DA9C271C7ADDDC00CA0F09 /* TBCCancellable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCancellable.m; sourceTree = "<group>"; };
 		A3DBD48E1987E68B00EDCAD2 /* libTBCCore-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTBCCore-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBD49F1987E68C00EDCAD2 /* TBCCoreTests-mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TBCCoreTests-mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBD4BA1987EA6F00EDCAD2 /* TBCCoreExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBCCoreExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +348,8 @@
 				A377E0DD199253F2007F2F47 /* TBCAlertView-ios.m */,
 				A377E0DE199253F2007F2F47 /* TBCAlertView-mac.m */,
 				FDBDE17719EB4D33009A2236 /* TBCCoreDefines.h */,
+				A3DA9C261C7ADDDC00CA0F09 /* TBCCancellable.h */,
+				A3DA9C271C7ADDDC00CA0F09 /* TBCCancellable.m */,
 				A31013F319E60F7D00092156 /* TBCCurrencyFormatter.h */,
 				A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */,
 				FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */,
@@ -456,6 +463,7 @@
 				A30AF179199B53F000E2E356 /* TBCDispatch.h in Headers */,
 				A3C9ABCB1A688838002323ED /* TBCStopwatch.h in Headers */,
 				A30AF174199B195400E2E356 /* TBCTimer.h in Headers */,
+				A3DA9C281C7ADDDC00CA0F09 /* TBCCancellable.h in Headers */,
 				A31013F519E60F7D00092156 /* TBCCurrencyFormatter.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
@@ -681,6 +689,7 @@
 				A377E0D119925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				FD4936CC1999D4460079A886 /* TBCDelayedDispatcher.m in Sources */,
 				FD4A893419B548D100D070E2 /* TBCActionSheet-ios.m in Sources */,
+				A3DA9C291C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */,
 				FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */,
 				A32272EB1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */,
@@ -717,6 +726,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DA9C2A1C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */,
 				FD4AA4F71C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */,
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
