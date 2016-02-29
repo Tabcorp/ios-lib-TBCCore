@@ -10,6 +10,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cancel;
 @end
 
+@interface TBCDispatchAsyncCancellable : NSObject<TBCCancellable>
+- (instancetype)initWithBlock:(dispatch_block_t)block;
+@end
+
 @interface TBCCancellableAggregator : NSObject<TBCCancellable>
 - (void)addCancellable:(id<TBCCancellable>)cancellable;
 - (void)removeCancellable:(id<TBCCancellable>)cancellable;
