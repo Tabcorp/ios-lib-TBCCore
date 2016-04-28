@@ -34,6 +34,19 @@
 }
 @end
 
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForCurrencyCode(NSString *currencyCode) {
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    currencyFormatter.currencyCode = currencyCode;
+    currencyFormatter.generatesDecimalNumbers = YES;
+    return [[TBCCurrencyFormatter alloc] initWithNumberFormatter:currencyFormatter];
+}
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForCurrencyCodeIntegralValues(NSString *currencyCode) {
+    TBCCurrencyFormatter *currencyFormatter = TBCCurrencyFormatterForCurrencyCode(currencyCode);;
+    currencyFormatter.maximumFractionDigits = 0;
+    return currencyFormatter;
+}
+
 TBCCurrencyFormatter *TBCCurrencyFormatterForAustralianCurrency(void) {
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;

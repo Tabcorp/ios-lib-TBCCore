@@ -9,5 +9,7 @@
 - (NSString *)stringForObjectValue:(id)object;
 @end
 
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForCurrencyCode(NSString *currencyCode);
+extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForCurrencyCodeIntegralValues(NSString *currencyCode);
 extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForAustralianCurrency(void);
 extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForAustralianCurrencyWholeDollars(void);
