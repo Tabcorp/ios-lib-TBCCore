@@ -52,6 +52,9 @@
 		A38B6CB81A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A38B6CB61A70B6AD008717C7 /* TBCPredicateBlock.m */; };
 		A38B6CB91A70B6AD008717C7 /* TBCPredicateBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A38B6CB61A70B6AD008717C7 /* TBCPredicateBlock.m */; };
 		A3A6BE181987EE280073C4DB /* TBCCoreExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */; };
+		A3C776E61D3A50740044AB4F /* TBCNotificationCenterObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C776E41D3A50740044AB4F /* TBCNotificationCenterObservation.h */; };
+		A3C776E71D3A50740044AB4F /* TBCNotificationCenterObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C776E51D3A50740044AB4F /* TBCNotificationCenterObservation.m */; };
+		A3C776E81D3A50740044AB4F /* TBCNotificationCenterObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C776E51D3A50740044AB4F /* TBCNotificationCenterObservation.m */; };
 		A3C9ABCB1A688838002323ED /* TBCStopwatch.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C9ABC91A688838002323ED /* TBCStopwatch.h */; };
 		A3C9ABCC1A688838002323ED /* TBCStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C9ABCA1A688838002323ED /* TBCStopwatch.m */; };
 		A3C9ABCD1A688838002323ED /* TBCStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C9ABCA1A688838002323ED /* TBCStopwatch.m */; };
@@ -189,6 +192,8 @@
 		A38B6CB61A70B6AD008717C7 /* TBCPredicateBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCPredicateBlock.m; sourceTree = "<group>"; };
 		A3A6BE161987EE280073C4DB /* TBCCoreExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCCoreExampleViewController.h; sourceTree = "<group>"; };
 		A3A6BE171987EE280073C4DB /* TBCCoreExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCCoreExampleViewController.m; sourceTree = "<group>"; };
+		A3C776E41D3A50740044AB4F /* TBCNotificationCenterObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCNotificationCenterObservation.h; sourceTree = "<group>"; };
+		A3C776E51D3A50740044AB4F /* TBCNotificationCenterObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCNotificationCenterObservation.m; sourceTree = "<group>"; };
 		A3C9ABC91A688838002323ED /* TBCStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCStopwatch.h; sourceTree = "<group>"; };
 		A3C9ABCA1A688838002323ED /* TBCStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCStopwatch.m; sourceTree = "<group>"; };
 		A3DA9C261C7ADDDC00CA0F09 /* TBCCancellable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCCancellable.h; sourceTree = "<group>"; };
@@ -360,6 +365,8 @@
 				A30AF178199B53F000E2E356 /* TBCDispatch.m */,
 				FD4AA4F31C50B0540038B9A0 /* TBCMonetaryValue.h */,
 				FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */,
+				A3C776E41D3A50740044AB4F /* TBCNotificationCenterObservation.h */,
+				A3C776E51D3A50740044AB4F /* TBCNotificationCenterObservation.m */,
 				A3C9ABC91A688838002323ED /* TBCStopwatch.h */,
 				A3C9ABCA1A688838002323ED /* TBCStopwatch.m */,
 				FD4936B91999BAB40079A886 /* TBCObjC.h */,
@@ -474,6 +481,7 @@
 				A32272EA1ADF873A00CBF58F /* NSDictionary+TBCCore.h in Headers */,
 				FD4A893519B548E200D070E2 /* TBCActionSheet.h in Headers */,
 				A38B6CB71A70B6AD008717C7 /* TBCPredicateBlock.h in Headers */,
+				A3C776E61D3A50740044AB4F /* TBCNotificationCenterObservation.h in Headers */,
 				A377E0D019925129007F2F47 /* TBCTypeSafety.h in Headers */,
 				A34F8DE01AF09FCF006A46C5 /* NSSet+TBCCore.h in Headers */,
 			);
@@ -693,6 +701,7 @@
 				FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */,
 				A32272EB1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */,
+				A3C776E71D3A50740044AB4F /* TBCNotificationCenterObservation.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
 				FD4AA4F61C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */,
 				FDFFE7AA1ACCDB3F00F8B782 /* NSString+TBCCore.m in Sources */,
@@ -729,6 +738,7 @@
 				A3DA9C2A1C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */,
 				FD4AA4F71C50B0540038B9A0 /* TBCMonetaryValue.m in Sources */,
 				A377E0D219925129007F2F47 /* TBCTypeSafety.m in Sources */,
+				A3C776E81D3A50740044AB4F /* TBCNotificationCenterObservation.m in Sources */,
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
