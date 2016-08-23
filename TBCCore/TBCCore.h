@@ -11,6 +11,7 @@
 #import <TBCCore/TBCCoreDefines.h>
 #import <TBCCore/TBCActionSheet.h>
 #import <TBCCore/TBCAlertView.h>
+#import <TBCCore/TBCApplicationVersion.h>
 #import <TBCCore/TBCCancellable.h>
 #import <TBCCore/TBCCurrencyFormatter.h>
 #import <TBCCore/TBCDebugging.h>
