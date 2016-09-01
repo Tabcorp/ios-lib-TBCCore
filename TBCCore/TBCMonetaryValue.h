@@ -10,11 +10,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (id<NSDecimalNumberBehaviors>)defaultBehavior;
 + (void)setDefaultBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 + (instancetype)monetaryValueWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount;
-- (instancetype)initWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount;
+- (instancetype)initWithUnspecifiedCurrencyCodeAndAmount:(NSDecimalNumber *)amount NS_DESIGNATED_INITIALIZER;
 
 + (instancetype)monetaryValueWithCurrencyCode:(NSString * __nullable)currencyCode amount:(NSDecimalNumber *)amount;
-- (instancetype)initWithCurrencyCode:(NSString * __nullable)currencyCode amount:(NSDecimalNumber *)amount;
+- (instancetype)initWithCurrencyCode:(NSString * __nullable)currencyCode amount:(NSDecimalNumber *)amount NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic,copy,readonly,nullable) NSString *currencyCode;
 @property (nonatomic,copy,readonly) NSDecimalNumber *amount;
