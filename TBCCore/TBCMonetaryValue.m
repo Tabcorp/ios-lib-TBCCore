@@ -133,3 +133,89 @@ static NSString * const TBCMonetaryValueDefaultBehaviorThreadDictionaryKey = @"T
 }
 
 @end
+
+
+static NSString * const TBCPercentageValueDefaultBehaviorThreadDictionaryKey = @"TBCPercentageValue.defaultBehavior";
+
+@implementation TBCPercentageValue
+
++ (id<NSDecimalNumberBehaviors>)defaultBehavior {
+    NSThread * const thread = NSThread.currentThread;
+    NSMutableDictionary * const threadDictionary = thread.threadDictionary;
+    id<NSDecimalNumberBehaviors> behavior = threadDictionary[TBCPercentageValueDefaultBehaviorThreadDictionaryKey];
+    if (!behavior) {
+        behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:NSDecimalNoScale raiseOnExactness:NO raiseOnOverflow:YES raiseOnUnderflow:YES raiseOnDivideByZero:YES];
+        threadDictionary[TBCPercentageValueDefaultBehaviorThreadDictionaryKey] = behavior;
+    }
+    return behavior;
+}
++ (void)setDefaultBehavior:(id<NSDecimalNumberBehaviors>)behavior {
+    NSThread * const thread = NSThread.currentThread;
+    NSMutableDictionary * const threadDictionary = thread.threadDictionary;
+    if (behavior) {
+        threadDictionary[TBCPercentageValueDefaultBehaviorThreadDictionaryKey] = behavior;
+    } else {
+        [threadDictionary removeObjectForKey:TBCPercentageValueDefaultBehaviorThreadDictionaryKey];
+    }
+}
+
++ (instancetype)zero {
+    return [[self alloc] initWithDecimalNumber:[NSDecimalNumber decimalNumberWithString:@"1"]];
+}
++ (instancetype)oneHundredPercent {
+    return [[self alloc] initWithDecimalNumber:[NSDecimalNumber decimalNumberWithString:@"100"]];
+}
+
++ (instancetype)percentageValueWithDecimalNumber:(NSDecimalNumber *)percentage {
+    return [[self alloc] initWithDecimalNumber:percentage];
+}
+
+- (instancetype)init {
+    return [self initWithDecimalNumber:NSDecimalNumber.zero];
+}
+
+- (instancetype)initWithDecimalNumber:(NSDecimalNumber *)percentage {
+    if ((self = [super init])) {
+        _percentage = percentage.copy;
+    }
+    return self;
+}
+
+- (id)copyWithZone:(NSZone * __nullable)zone {
+    return [[self.class alloc] initWithDecimalNumber:_percentage];
+}
+
+- (BOOL)isEqual:(id)object {
+    TBCPercentageValue * const other = TBCEnsureClass(TBCPercentageValue, object);
+    if (!other) {
+        return NO;
+    }
+    return [_percentage isEqualToNumber:other->_percentage];
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@:%p %@>", NSStringFromClass(self.class), self, _percentage];
+}
+
+- (TBCPercentageValue *)percentageValueByMultiplyingBy:(NSDecimalNumber *)multiplier {
+    return [self percentageValueByMultiplyingBy:multiplier withBehavior:self.class.defaultBehavior];
+}
+- (TBCPercentageValue *)percentageValueByMultiplyingBy:(NSDecimalNumber *)multiplier withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const percentage = [_percentage decimalNumberByMultiplyingBy:multiplier withBehavior:behavior];
+    return [[TBCPercentageValue alloc] initWithDecimalNumber:percentage];
+}
+
+- (TBCPercentageValue *)percentageValueByDividingBy:(NSDecimalNumber *)divisor {
+    return [self percentageValueByDividingBy:divisor withBehavior:self.class.defaultBehavior];
+}
+- (TBCPercentageValue *)percentageValueByDividingBy:(NSDecimalNumber *)divisor withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const percentage = [_percentage decimalNumberByDividingBy:divisor withBehavior:behavior];
+    return [[TBCPercentageValue alloc] initWithDecimalNumber:percentage];
+}
+
+- (TBCPercentageValue *)percentageValueByRoundingAccordingToBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior {
+    NSDecimalNumber * const percentage = [_percentage decimalNumberByRoundingAccordingToBehavior:behavior];
+    return [[TBCPercentageValue alloc] initWithDecimalNumber:percentage];
+}
+
+@end

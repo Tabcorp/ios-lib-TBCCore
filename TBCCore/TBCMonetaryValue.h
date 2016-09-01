@@ -38,3 +38,29 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TBCPercentageValue : NSObject<NSCopying>
+
++ (instancetype)zero;
++ (instancetype)oneHundredPercent;
+
+- (instancetype)init NS_UNAVAILABLE;
+
++ (instancetype)percentageValueWithDecimalNumber:(NSDecimalNumber *)percentage;
+- (instancetype)initWithDecimalNumber:(NSDecimalNumber *)percentage NS_DESIGNATED_INITIALIZER;
+
+@property (nonatomic,copy,readonly) NSDecimalNumber *percentage;
+
+- (TBCPercentageValue *)percentageValueByMultiplyingBy:(NSDecimalNumber *)multiplier;
+- (TBCPercentageValue *)percentageValueByMultiplyingBy:(NSDecimalNumber *)multiplier withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior;
+
+- (TBCPercentageValue *)percentageValueByDividingBy:(NSDecimalNumber *)divisor;
+- (TBCPercentageValue *)percentageValueByDividingBy:(NSDecimalNumber *)divisor withBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior;
+
+- (TBCPercentageValue *)percentageValueByRoundingAccordingToBehavior:(id<NSDecimalNumberBehaviors> __nullable)behavior;
+
+@end
+
+NS_ASSUME_NONNULL_END
