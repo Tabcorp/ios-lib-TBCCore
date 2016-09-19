@@ -50,7 +50,7 @@ extern id<TBCCurrencyFormatter> TBCCurrencyFormatterForCurrencyCodeIntegralValue
 TBCCurrencyFormatter *TBCCurrencyFormatterForAustralianCurrency(void) {
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    currencyFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_AU"];
+    currencyFormatter.currencyCode = @"AUD";
     currencyFormatter.generatesDecimalNumbers = YES;
     return [[TBCCurrencyFormatter alloc] initWithNumberFormatter:currencyFormatter];
 }
