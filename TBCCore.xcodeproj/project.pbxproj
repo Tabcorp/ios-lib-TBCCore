@@ -638,7 +638,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TBC;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Tabcorp Pty. Ltd.";
 				TargetAttributes = {
 					A3084F7B1987E2EB00C30AFA = {
@@ -908,6 +908,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "TBCCoreTests/TBCCoreTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -924,6 +925,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = "TBCCoreTests/TBCCoreTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -960,6 +962,7 @@
 				);
 				INFOPLIST_FILE = "TBCCoreTests/TBCCoreTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -979,6 +982,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				INFOPLIST_FILE = "TBCCoreTests/TBCCoreTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -990,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Debug;
 		};
@@ -997,6 +1002,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A377E14B1995C21A007F2F47 /* TBCCoreExample-ios.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 			};
 			name = Release;
 		};
@@ -1014,6 +1020,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "TBCCoreExampleTests/TBCCoreExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1031,6 +1038,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = "TBCCoreExampleTests/TBCCoreExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.tabcorp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TEST_HOST = "$(BUNDLE_LOADER)";
