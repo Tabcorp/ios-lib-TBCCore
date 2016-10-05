@@ -20,6 +20,7 @@
 #import <TBCCore/TBCMonetaryValue.h>
 #import <TBCCore/TBCNotificationCenterObservation.h>
 #import <TBCCore/TBCObjC.h>
+#import <TBCCore/TBCObserverCollection.h>
 #import <TBCCore/TBCPersistenceURLProvider.h>
 #import <TBCCore/TBCStopwatch.h>
 #import <TBCCore/TBCTimeInterval.h>
