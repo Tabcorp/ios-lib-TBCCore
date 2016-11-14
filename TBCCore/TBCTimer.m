@@ -63,10 +63,6 @@ NSTimeInterval const TBCTimerIntervalForever = INFINITY;
     return [self initWithFireDate:fireDate interval:interval leeway:leeway queue:nil block:block];
 }
 
-- (void)dealloc {
-    tbc_dispatch_release(_source);
-}
-
 - (void)invalidate {
     dispatch_source_cancel(_source);
 }

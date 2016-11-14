@@ -34,7 +34,7 @@ NSTimeInterval const TBCDelayedDispatcherDelayForever = INFINITY;
     }
 
     if ((self = [super init])) {
-        tbc_dispatch_retain(_queue = queue);
+        _queue = queue;
         _block = [block ?: ^{} copy];
 
         _timerDelay = tbc_dispatch_time_interval(delay) ?: DISPATCH_TIME_FOREVER;
@@ -76,10 +76,6 @@ NSTimeInterval const TBCDelayedDispatcherDelayForever = INFINITY;
     if (_maximumTimer) {
         dispatch_source_cancel(_maximumTimer);
     }
-
-    tbc_dispatch_release(_timer);
-    tbc_dispatch_release(_maximumTimer);
-    tbc_dispatch_release(_queue);
 }
 
 
