@@ -16,6 +16,11 @@
 		2C8DC9071DA6537C00951A58 /* TBCDeallocNotifierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DC9051DA6537C00951A58 /* TBCDeallocNotifierTests.m */; };
 		2CBF0C141D6C313500C45795 /* TBCApplicationVersionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF0C131D6C313500C45795 /* TBCApplicationVersionTests.m */; };
 		2CBF0C151D6C313500C45795 /* TBCApplicationVersionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF0C131D6C313500C45795 /* TBCApplicationVersionTests.m */; };
+		952F5EC5200C2E15009D5A11 /* TBCKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F5EC3200C2E14009D5A11 /* TBCKVOObservation.m */; };
+		952F5EC6200C2E15009D5A11 /* TBCKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F5EC3200C2E14009D5A11 /* TBCKVOObservation.m */; };
+		952F5EC7200C2E15009D5A11 /* TBCKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 952F5EC4200C2E14009D5A11 /* TBCKVOObservation.h */; };
+		952F5EC9200C561D009D5A11 /* TBCKVOObservationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F5EC8200C561D009D5A11 /* TBCKVOObservationTests.m */; };
+		952F5ECA200C561D009D5A11 /* TBCKVOObservationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F5EC8200C561D009D5A11 /* TBCKVOObservationTests.m */; };
 		A3017FCE1A84663D0055A22A /* NSMutableDictionary+TBCCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */; };
 		A3017FCF1A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */; };
 		A3017FD01A84663D0055A22A /* NSMutableDictionary+TBCCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */; };
@@ -166,6 +171,9 @@
 		2C8DC8FE1DA6528700951A58 /* TBCDeallocNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDeallocNotifier.m; sourceTree = "<group>"; };
 		2C8DC9051DA6537C00951A58 /* TBCDeallocNotifierTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCDeallocNotifierTests.m; sourceTree = "<group>"; };
 		2CBF0C131D6C313500C45795 /* TBCApplicationVersionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCApplicationVersionTests.m; sourceTree = "<group>"; };
+		952F5EC3200C2E14009D5A11 /* TBCKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCKVOObservation.m; sourceTree = "<group>"; };
+		952F5EC4200C2E14009D5A11 /* TBCKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCKVOObservation.h; sourceTree = "<group>"; };
+		952F5EC8200C561D009D5A11 /* TBCKVOObservationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCKVOObservationTests.m; sourceTree = "<group>"; };
 		A3017FCC1A84663D0055A22A /* NSMutableDictionary+TBCCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TBCCore.h"; sourceTree = "<group>"; };
 		A3017FCD1A84663D0055A22A /* NSMutableDictionary+TBCCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TBCCore.m"; sourceTree = "<group>"; };
 		A3084F6C1987E2EB00C30AFA /* libTBCCore-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTBCCore-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +396,8 @@
 				FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */,
 				A30AF177199B53F000E2E356 /* TBCDispatch.h */,
 				A30AF178199B53F000E2E356 /* TBCDispatch.m */,
+				952F5EC4200C2E14009D5A11 /* TBCKVOObservation.h */,
+				952F5EC3200C2E14009D5A11 /* TBCKVOObservation.m */,
 				FD4AA4F31C50B0540038B9A0 /* TBCMonetaryValue.h */,
 				FD4AA4F41C50B0540038B9A0 /* TBCMonetaryValue.m */,
 				A3C776E41D3A50740044AB4F /* TBCNotificationCenterObservation.h */,
@@ -420,6 +430,7 @@
 				2CBF0C131D6C313500C45795 /* TBCApplicationVersionTests.m */,
 				2C8DC9051DA6537C00951A58 /* TBCDeallocNotifierTests.m */,
 				FD4936DE199AE3920079A886 /* TBCDelayedDispatcherTests.m */,
+				952F5EC8200C561D009D5A11 /* TBCKVOObservationTests.m */,
 				FD4AA4FA1C51B6110038B9A0 /* TBCMonetaryValueTests.m */,
 				FD4936BE1999CEB80079A886 /* TBCObjCTests.m */,
 				2C18DF0A1DB194CB009FDE9B /* TBCObserverCollectionTests.m */,
@@ -504,6 +515,7 @@
 				A3DA9C281C7ADDDC00CA0F09 /* TBCCancellable.h in Headers */,
 				A31013F519E60F7D00092156 /* TBCCurrencyFormatter.h in Headers */,
 				FD4936BB1999BAB40079A886 /* TBCObjC.h in Headers */,
+				952F5EC7200C2E15009D5A11 /* TBCKVOObservation.h in Headers */,
 				FD4936CB1999D4460079A886 /* TBCDelayedDispatcher.h in Headers */,
 				FDBDE17A19EB4E3C009A2236 /* TBCDebugging.h in Headers */,
 				FD4AA4F51C50B0540038B9A0 /* TBCMonetaryValue.h in Headers */,
@@ -734,6 +746,7 @@
 				A3DA9C291C7ADDDC00CA0F09 /* TBCCancellable.m in Sources */,
 				FDBDE17B19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				A37001811A2D38FA0091B978 /* NSArray+TBCCore.m in Sources */,
+				952F5EC5200C2E15009D5A11 /* TBCKVOObservation.m in Sources */,
 				A32272EB1ADF873A00CBF58F /* NSDictionary+TBCCore.m in Sources */,
 				A3C776E71D3A50740044AB4F /* TBCNotificationCenterObservation.m in Sources */,
 				A30AF175199B195400E2E356 /* TBCTimer.m in Sources */,
@@ -764,6 +777,7 @@
 				2C8DC9061DA6537C00951A58 /* TBCDeallocNotifierTests.m in Sources */,
 				2C18DF0B1DB194CB009FDE9B /* TBCObserverCollectionTests.m in Sources */,
 				A30AF180199B88F500E2E356 /* TBCTimerTests.m in Sources */,
+				952F5EC9200C561D009D5A11 /* TBCKVOObservationTests.m in Sources */,
 				A37001831A2D40700091B978 /* NSArray+TBCCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +793,7 @@
 				A377E0DA1992529D007F2F47 /* TBCTimeInterval.m in Sources */,
 				2C8DC9011DA6528700951A58 /* TBCDeallocNotifier.m in Sources */,
 				FD36DDC21D6C270E007E1381 /* TBCApplicationVersion.m in Sources */,
+				952F5EC6200C2E15009D5A11 /* TBCKVOObservation.m in Sources */,
 				FDBDE17C19EB4E3C009A2236 /* TBCDebugging.m in Sources */,
 				FD56C8B819C7FD04008E9B11 /* TBCPersistenceURLProvider.m in Sources */,
 				A34F8DE21AF09FCF006A46C5 /* NSSet+TBCCore.m in Sources */,
@@ -810,6 +825,7 @@
 				2C8DC9071DA6537C00951A58 /* TBCDeallocNotifierTests.m in Sources */,
 				2C18DF0C1DB194CB009FDE9B /* TBCObserverCollectionTests.m in Sources */,
 				A30AF181199B88F500E2E356 /* TBCTimerTests.m in Sources */,
+				952F5ECA200C561D009D5A11 /* TBCKVOObservationTests.m in Sources */,
 				A37001841A2D40820091B978 /* NSArray+TBCCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

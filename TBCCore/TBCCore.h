@@ -18,6 +18,7 @@
 #import <TBCCore/TBCDebugging.h>
 #import <TBCCore/TBCDelayedDispatcher.h>
 #import <TBCCore/TBCDispatch.h>
+#import <TBCCore/TBCKVOObservation.h>
 #import <TBCCore/TBCMonetaryValue.h>
 #import <TBCCore/TBCNotificationCenterObservation.h>
 #import <TBCCore/TBCObjC.h>
