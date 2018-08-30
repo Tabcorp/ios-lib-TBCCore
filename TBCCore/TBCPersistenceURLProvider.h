@@ -23,6 +23,11 @@
 - (id<TBCPersistenceURLProvider>)subproviderWithPathComponents:(NSArray *)pathComponents;
 
 /**
+ Provides a namespaced URL within the app group, falling back to documentsURL if no app group is specified
+ */
+@property (nonatomic,copy,readonly) NSURL *applicationGroupURL;
+
+/**
  Provides a namespaced URL under `NSCachesDirectory`
  */
 @property (nonatomic,copy,readonly) NSURL *cachesURL;
@@ -55,5 +60,13 @@
  @param pathComponents an array of path components for namespacing
  */
 - (instancetype)initWithPathComponents:(NSArray *)pathComponents;
+
+/**
+ Initializes a URL provider with app group identifier and optional namespacing path component
+
+ @param appGroupIdentifier an app group identifier
+ @param pathComponent a path component for namespacing
+ */
+- (instancetype)initWithAppGroupIdentifier:(NSString *)appGroupIdentifier pathComponent:(NSString *)pathComponent;
 
 @end

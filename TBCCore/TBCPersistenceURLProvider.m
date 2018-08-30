@@ -4,6 +4,7 @@
 
 
 @interface TBCPersistenceURLRootProvider : NSObject<TBCPersistenceURLProvider>
+- (instancetype)initWithAppGroupIdentifier:(NSString *)appGroupIdentifier;
 @end
 
 @interface TBCPersistenceURLSubprovider : NSObject<TBCPersistenceURLProvider>
@@ -32,6 +33,19 @@
 
 }
 
+- (instancetype)initWithAppGroupIdentifier:(NSString *)appGroupIdentifier pathComponent:(NSString *)pathComponent {
+    id<TBCPersistenceURLProvider> const provider = [[TBCPersistenceURLRootProvider alloc] initWithAppGroupIdentifier:appGroupIdentifier];
+    if (pathComponent) {
+        return [provider subproviderWithPathComponent:pathComponent];
+    }
+    return provider;
+}
+
+- (NSURL *)applicationGroupURL {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (NSURL *)cachesURL {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
@@ -58,15 +72,27 @@
 @implementation TBCPersistenceURLRootProvider {
 @private
     NSFileManager *_fm;
+    NSURL *_applicationGroupURL;
     NSURL *_cachesURL;
     NSURL *_documentsURL;
 }
 
-- (instancetype)init {
+- (instancetype)initWithAppGroupIdentifier:(NSString *)appGroupIdentifier {
     if ((self = [super init])) {
         _fm = [[NSFileManager alloc] init];
+        if (appGroupIdentifier) {
+            _applicationGroupURL = [_fm containerURLForSecurityApplicationGroupIdentifier:appGroupIdentifier];
+        }
     }
     return self;
+}
+
+- (instancetype)init {
+    return [self initWithAppGroupIdentifier:nil];
+}
+
+- (NSURL *)applicationGroupURL {
+    return _applicationGroupURL ?: [self documentsURL];
 }
 
 - (NSURL *)cachesURL {
@@ -108,6 +134,7 @@
 @private
     id<TBCPersistenceURLProvider> _provider;
     NSArray *_pathComponents;
+    NSURL *_applicationGroupURL;
     NSURL *_cachesURL;
     NSURL *_documentsURL;
 }
@@ -130,6 +157,17 @@
         _pathComponents = [[NSArray alloc] initWithArray:pathComponents copyItems:YES];
     }
     return self;
+}
+
+- (NSURL *)applicationGroupURL {
+    if (!_applicationGroupURL) {
+        NSURL *applicationGroupURL = _provider.applicationGroupURL;
+        for (NSString *pathComponent in _pathComponents) {
+            applicationGroupURL = [applicationGroupURL URLByAppendingPathComponent:pathComponent isDirectory:YES];
+        }
+        _applicationGroupURL = applicationGroupURL;
+    }
+    return _applicationGroupURL;
 }
 
 - (NSURL *)cachesURL {
