@@ -1,7 +1,5 @@
 //  Copyright (c) 2014 Tabcorp Pty. Ltd. All rights reserved.
-
-#include "../.eggs/TBCCoreExample-iOS/TBCCore-iOS/Configuration/Target-iOS.xcconfig"
-#include "../.eggs/TBCCoreExample-iOS/eggs.xcconfig"
+#include "Target-iOS.xcconfig"
 
 CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
 TARGETED_DEVICE_FAMILY = 1,2
