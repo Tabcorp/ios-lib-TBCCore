@@ -104,8 +104,6 @@
 		CB3548782230C77000F8DDD2 /* TBCCurrencyFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A31013F419E60F7D00092156 /* TBCCurrencyFormatter.m */; };
 		CB3548792230C77000F8DDD2 /* TBCDeallocNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8DC8FD1DA6528700951A58 /* TBCDeallocNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB35487A2230C77000F8DDD2 /* TBCDeallocNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DC8FE1DA6528700951A58 /* TBCDeallocNotifier.m */; };
-		CB35487B2230C77000F8DDD2 /* TBCDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBDE17819EB4E3C009A2236 /* TBCDebugging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB35487C2230C77000F8DDD2 /* TBCDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE17919EB4E3C009A2236 /* TBCDebugging.m */; };
 		CB35487D2230C77000F8DDD2 /* TBCDelayedDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4936C91999D4460079A886 /* TBCDelayedDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB35487E2230C77000F8DDD2 /* TBCDelayedDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4936CA1999D4460079A886 /* TBCDelayedDispatcher.m */; };
 		CB35487F2230C77000F8DDD2 /* TBCDispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = A30AF177199B53F000E2E356 /* TBCDispatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -593,7 +591,6 @@
 				CB3548682230C77000F8DDD2 /* NSDictionary+TBCCore.h in Headers */,
 				CB35488B2230C77000F8DDD2 /* TBCObserverCollection.h in Headers */,
 				CB3548852230C77000F8DDD2 /* TBCNotificationCenterObservation.h in Headers */,
-				CB35487B2230C77000F8DDD2 /* TBCDebugging.h in Headers */,
 				CB3548932230C77000F8DDD2 /* TBCTypeSafety.h in Headers */,
 				CB3548812230C77000F8DDD2 /* TBCKVOObservation.h in Headers */,
 				CB3548922230C77000F8DDD2 /* TBCTimer.h in Headers */,
@@ -602,7 +599,6 @@
 				CB35486A2230C77000F8DDD2 /* NSMutableDictionary+TBCCore.h in Headers */,
 				CB3548912230C77000F8DDD2 /* TBCTimeInterval.h in Headers */,
 				CB3548832230C77000F8DDD2 /* TBCMonetaryValue.h in Headers */,
-				CB8D77962230AA3800AFA9B3 /* TBCCore.h in Headers */,
 				CB35486C2230C77000F8DDD2 /* NSMapTable+TBCCore.h in Headers */,
 				CB35486E2230C77000F8DDD2 /* NSSet+TBCCore.h in Headers */,
 				CB4ED1E1224098260046E1B2 /* TBCCore.h in Headers */,
@@ -976,7 +972,6 @@
 				CB3548672230C77000F8DDD2 /* NSArray+TBCCore.m in Sources */,
 				CB35486D2230C77000F8DDD2 /* NSMapTable+TBCCore.m in Sources */,
 				CB3548732230C77000F8DDD2 /* TBCApplicationVersion.m in Sources */,
-				CB35487C2230C77000F8DDD2 /* TBCDebugging.m in Sources */,
 				CB35486F2230C77000F8DDD2 /* NSSet+TBCCore.m in Sources */,
 				CB3548692230C77000F8DDD2 /* NSDictionary+TBCCore.m in Sources */,
 				CB8D779B2230AB9A00AFA9B3 /* TBCTimeInterval.m in Sources */,
