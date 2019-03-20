@@ -52,3 +52,14 @@ steps:
     env:
       XCODE_SCHEME: TBCCoreExample-iOS
       XCODE_SDK: iphonesimulator
+
+  - name: "iOS Framework"
+    command: .ci-scripts/build
+    agents:
+      os: macos
+      queue: mobile
+      xcode: 8
+    env:
+      XCODE_SCHEME: TBCCore-iOS-framework
+      XCODE_SDK: iphonesimulator
+      XCODE_DESTINATION: "platform=iOS Simulator,name=iPhone 6"
