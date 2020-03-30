@@ -1,5 +1,4 @@
 #!/bin/sh
 
-git submodule update --init --recursive
-
-egg
+#git submodule update --init --recursive
+#egg
