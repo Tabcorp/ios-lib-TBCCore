@@ -4,4 +4,4 @@ set -euo pipefail
 
 ./.ci-scripts/bootstrap
 
-xcodebuild build -project TBCCore.xcodeproj -scheme "$XCODE_SCHEME" -sdk "$XCODE_SDK" | xcpretty
+xcodebuild build -project TBCCore.xcodeproj -scheme "$XCODE_SCHEME" -sdk "$XCODE_SDK"
