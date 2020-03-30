@@ -5,7 +5,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCore-mac
       XCODE_SDK: macosx
@@ -15,7 +15,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCore-mac
       XCODE_SDK: macosx
@@ -25,7 +25,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCore-iOS
       XCODE_SDK: iphonesimulator
@@ -37,7 +37,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCore-iOS
       XCODE_SDK: iphonesimulator
@@ -48,7 +48,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCoreExample-iOS
       XCODE_SDK: iphonesimulator
@@ -58,7 +58,7 @@ steps:
     agents:
       os: macos
       queue: ios
-      xcode: 8
+      xcode: 11
     env:
       XCODE_SCHEME: TBCCore-iOS-framework
       XCODE_SDK: iphonesimulator
