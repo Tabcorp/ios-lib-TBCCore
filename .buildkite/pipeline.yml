@@ -32,7 +32,7 @@ steps:
       XCODE_DESTINATION: "name=iPhone 11"
 
 
-  - name: "iOS - Test"
+  - name: "iOS-Test"
     command: .ci-scripts/test
     agents:
       os: macos
@@ -46,7 +46,7 @@ steps:
   - name: "iOS Example"
     command: .ci-scripts/build
     depends_on:
-      - step: "iOS - Test"
+      - step: "iOS-Test"
     agents:
       os: macos
       queue: ios
@@ -58,7 +58,7 @@ steps:
   - name: "iOS Framework"
     command: .ci-scripts/build
     depends_on:
-      - step: "iOS - Test"
+      - step: "iOS-Test"
     agents:
       os: macos
       queue: ios
