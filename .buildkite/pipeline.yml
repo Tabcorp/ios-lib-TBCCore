@@ -4,7 +4,7 @@ steps:
     command: .ci-scripts/analyze
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCore-mac
@@ -14,7 +14,7 @@ steps:
     command: .ci-scripts/test
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCore-mac
@@ -24,7 +24,7 @@ steps:
     command: .ci-scripts/analyze
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCore-iOS
@@ -36,7 +36,7 @@ steps:
     command: .ci-scripts/test
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCore-iOS
@@ -47,7 +47,7 @@ steps:
     command: .ci-scripts/build
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCoreExample-iOS
@@ -57,7 +57,7 @@ steps:
     command: .ci-scripts/build
     agents:
       os: macos
-      queue: mobile
+      queue: ios
       xcode: 8
     env:
       XCODE_SCHEME: TBCCore-iOS-framework
