@@ -32,8 +32,9 @@ steps:
       XCODE_DESTINATION: "name=iPhone 11"
 
 
-  - name: "iOS-Test"
+  - name: "iOS - Test"
     command: .ci-scripts/test
+    key: "iOS-Test"
     agents:
       os: macos
       queue: ios
